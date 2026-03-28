@@ -1,4 +1,7 @@
-import { Outlet, NavLink } from "react-router";
+import { NavLink, Outlet } from "react-router";
+
+import Footer from "../../shared/components/Footer";
+import Navbar from "../../shared/components/Navbar";
 import { PATHS } from "../router/paths";
 
 const linkStyle = ({ isActive }) => ({
@@ -12,26 +15,32 @@ const linkStyle = ({ isActive }) => ({
 
 export default function PrivateLayout() {
   return (
-    <div style={{ minHeight: "100vh", display: "grid", gridTemplateColumns: "240px 1fr" }}>
-      <aside style={{ borderRight: "1px solid #e5e7eb", padding: "1rem" }}>
-        <h2 style={{ marginBottom: "1rem" }}>Panel privado</h2>
+    <>
+      <Navbar />
 
-        <nav style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-          <NavLink to={PATHS.PROFILE} style={linkStyle}>
-            Perfil
-          </NavLink>
-          <NavLink to={PATHS.CART} style={linkStyle}>
-            Carrito
-          </NavLink>
-          <NavLink to={PATHS.CHECKOUT} style={linkStyle}>
-            Checkout
-          </NavLink>
-        </nav>
-      </aside>
+      <div style={{ minHeight: "100vh", display: "grid", gridTemplateColumns: "240px 1fr" }}>
+        <aside style={{ borderRight: "1px solid #e5e7eb", padding: "1rem" }}>
+          <h2 style={{ marginBottom: "1rem" }}>Panel privado</h2>
 
-      <main style={{ padding: "2rem" }}>
-        <Outlet />
-      </main>
-    </div>
+          <nav style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+            <NavLink to={PATHS.PROFILE} style={linkStyle}>
+              Perfil
+            </NavLink>
+            <NavLink to={PATHS.CART} style={linkStyle}>
+              Carrito
+            </NavLink>
+            <NavLink to={PATHS.CHECKOUT} style={linkStyle}>
+              Checkout
+            </NavLink>
+          </nav>
+        </aside>
+
+        <main style={{ padding: "2rem" }}>
+          <Outlet />
+        </main>
+      </div>
+
+      <Footer />
+    </>
   );
 }
