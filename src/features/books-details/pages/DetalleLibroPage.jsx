@@ -1,9 +1,7 @@
 import React from 'react';
-import SearchBar from './searchBar/searchBar';
-import Label from './SearchBar/Label';
-import Book from './SearchBar/Book';
+import Label from '../../../shared/components/Label';
 
-function ViewDetalleLibro() {
+function DetalleLibroPage() {
     return (
         <>
             <Label texto="THE ADVENTURES OF SUPER DIAPER BABY: COLOR EDITION" />
@@ -22,4 +20,4 @@ function ViewDetalleLibro() {
     );
 }
 
-export default ViewDetalleLibro;
+export default DetalleLibroPage;

@@ -1,0 +1,162 @@
+[
+	{
+		"id": 1,
+		"titulo": "El Eco de las Sombras",
+		"autor": "Luis Andrade",
+		"precio": 12.99,
+		"categoria": "Fantasía",
+		"isbn": "9780000000011",
+		"stock": 15,
+		"detalle": "Una aventura en un reino olvidado."
+	},
+	{
+		"id": 2,
+		"titulo": "Caminos del Viento",
+		"autor": "María Lema",
+		"precio": 14.5,
+		"categoria": "Drama",
+		"isbn": "9780000000028",
+		"stock": 22,
+		"detalle": "Una historia sobre la superación personal."
+	},
+	{
+		"id": 3,
+		"titulo": "El Último Guardián",
+		"autor": "R. Esteban",
+		"precio": 18.75,
+		"categoria": "Aventura",
+		"isbn": "9780000000035",
+		"stock": 10,
+		"detalle": "Una misión peligrosa para proteger un secreto antiguo."
+	},
+	{
+		"id": 4,
+		"titulo": "Código Fragmentado",
+		"autor": "Ana Torres",
+		"precio": 16.9,
+		"categoria": "Ciencia Ficción",
+		"isbn": "9780000000042",
+		"stock": 17,
+		"detalle": "Una inteligencia artificial fuera de control."
+	},
+	{
+		"id": 5,
+		"titulo": "Memorias de Invierno",
+		"autor": "Diego Peralta",
+		"precio": 11.2,
+		"categoria": "Romance",
+		"isbn": "9780000000059",
+		"stock": 30,
+		"detalle": "Un amor que renace en medio del frío."
+	},
+	{
+		"id": 6,
+		"titulo": "La Senda Oculta",
+		"autor": "Carmen Ruiz",
+		"precio": 19.99,
+		"categoria": "Suspenso",
+		"isbn": "9780000000066",
+		"stock": 12,
+		"detalle": "Una desaparición que revela secretos oscuros."
+	},
+	{
+		"id": 7,
+		"titulo": "Sombras en la Marea",
+		"autor": "Felipe Navarro",
+		"precio": 13.4,
+		"categoria": "Misterio",
+		"isbn": "9780000000073",
+		"stock": 20,
+		"detalle": "Una investigación en un pequeño pueblo costero."
+	},
+	{
+		"id": 8,
+		"titulo": "Horizonte de Acero",
+		"autor": "J. Maldonado",
+		"precio": 21.0,
+		"categoria": "Ciencia Ficción",
+		"isbn": "9780000000080",
+		"stock": 8,
+		"detalle": "La humanidad enfrenta su límite tecnológico."
+	},
+	{
+		"id": 9,
+		"titulo": "La Ruta del Destino",
+		"autor": "Sara Villalba",
+		"precio": 10.99,
+		"categoria": "Aventura",
+		"isbn": "9780000000097",
+		"stock": 26,
+		"detalle": "Un viaje inesperado cambia la vida de una joven exploradora."
+	},
+	{
+		"id": 10,
+		"titulo": "Pétalos Rotos",
+		"autor": "Claudia Pinto",
+		"precio": 9.8,
+		"categoria": "Drama",
+		"isbn": "9780000000103",
+		"stock": 32,
+		"detalle": "Una familia que lucha por mantenerse unida."
+	},
+	{
+		"id": 11,
+		"titulo": "Reflejos del Pasado",
+		"autor": "Alberto Jurado",
+		"precio": 12.25,
+		"categoria": "Suspenso",
+		"isbn": "9780000000110",
+		"stock": 14,
+		"detalle": "Un espejo que revela más de lo que debería."
+	},
+	{
+		"id": 12,
+		"titulo": "Crónicas del Horizonte Azul",
+		"autor": "Daniela Reyes",
+		"precio": 16.3,
+		"categoria": "Fantasía",
+		"isbn": "9780000000127",
+		"stock": 19,
+		"detalle": "Un mundo gobernado por criaturas celestiales."
+	},
+	{
+		"id": 13,
+		"titulo": "El Faro de Medianoche",
+		"autor": "Gustavo Serrano",
+		"precio": 13.99,
+		"categoria": "Misterio",
+		"isbn": "9780000000134",
+		"stock": 23,
+		"detalle": "Un faro que oculta historias perturbadoras."
+	},
+	{
+		"id": 14,
+		"titulo": "Voces en la Arena",
+		"autor": "Helena Burbano",
+		"precio": 15.45,
+		"categoria": "Aventura",
+		"isbn": "9780000000141",
+		"stock": 11,
+		"detalle": "Una búsqueda épica en un vasto desierto."
+	},
+	{
+		"id": 15,
+		"titulo": "Eclipse Carmesí",
+		"autor": "Tomás Riera",
+		"precio": 20.0,
+		"categoria": "Fantasía",
+		"isbn": "9780000000158",
+		"stock": 9,
+		"detalle": "Un imperio al borde del colapso mágico."
+	},
+	{
+		"id": 100,
+		"titulo": "El Reino Sumergido",
+		"autor": "Valeria Santos",
+		"precio": 19.1,
+		"categoria": "Fantasía",
+		"isbn": "9780000001000",
+		"stock": 13,
+		"detalle": "Una ciudad perdida bajo el océano que despierta."
+	}
+]

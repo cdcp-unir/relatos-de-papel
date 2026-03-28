@@ -1,0 +1,40 @@
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo img {
+    width: 48px;
+    height: auto;
+}
+
+.header-logo p {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--color-text);
+}
+
+.language-selector {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: var(--color-text);
+    cursor: pointer;
+    user-select: none;
+}
+
+.language-selector span:hover {
+    text-decoration: underline;
+}
