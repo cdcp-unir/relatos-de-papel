@@ -10,7 +10,8 @@ import { PATHS } from "./paths";
 import LandingPage from "../../features/landing/pages/LandingPage";
 import PrivateLayout from "../layouts/PrivateLayout";
 import ProtectedRoute from "../../shared/components/ProtectedRoute";
-const isAuthenticated = false;
+import { isAuthenticated } from "../../state/loginState";
+
 const router = createBrowserRouter([
   {
     path: PATHS.LANDING,
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: PATHS.LOGIN,
-        element: isAuthenticated ? (
+        element: isAuthenticated() ? (
           <Navigate to={PATHS.PROFILE} replace />
         ) : (
           <LoginPage />
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: PATHS.REGISTER,
-        element: isAuthenticated ? (
+        element: isAuthenticated() ? (
           <Navigate to={PATHS.PROFILE} replace />
         ) : (
           <RegisterPage />
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
   },
   {
     element: (
-      <ProtectedRoute isAuthenticated={isAuthenticated}>
+      <ProtectedRoute>
         <PrivateLayout />
       </ProtectedRoute>
     ),
