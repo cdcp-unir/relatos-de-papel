@@ -4,7 +4,7 @@ import { Button } from '../../../shared/components/Button';
 import { Header } from '../../../shared/components/Header';
 import { InputText, InputPassword } from '../../../shared/components/InputText';
 import './LoginPage.css';
-import { getLoginState, setLoginState } from '../../../state/loginState';
+import { login } from './LoginService';
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -14,25 +14,9 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const login = async (username, password) => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    setLoginState({
-      isAuthenticated: true,
-      username,
-      password
-    });
-
-    console.log("estado de login:", getLoginState());
-
-    return {
-      username,
-      password
-    };
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
 
     if (!username || !password) {
       alert('Por favor, ingresa tu nombre de usuario y contraseña.');
@@ -44,7 +28,7 @@ export default function LoginPage() {
       await login(username, password);
       navigate('/home');
     } catch (error) {
-      console.error('Error logging in:', error);
+      console.error('Error logging in:', error.message);
       setError(error.message);
     }
     finally {
@@ -72,9 +56,10 @@ export default function LoginPage() {
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
-        {error && <p className="error-message">{error.message}</p>}
-        
+
         <Button className="login-button" type="submit" isLoading={isLoading}>Iniciar sesión</Button>
+        
+        {error && <p className="error-message">{error}</p>}
       </form>
     </section>
   </div >;

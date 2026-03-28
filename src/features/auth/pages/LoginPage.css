@@ -34,7 +34,7 @@
     margin-top: 2rem;
 }
 
-.error-message {
+p.error-message {
     color: var(--color-error);
     font-size: 1.2rem;
     margin-top: 1rem;

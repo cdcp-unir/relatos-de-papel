@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 
 let state = {
   username: '',
-  password: '',
+  userId: '',
+  role: '',
   isAuthenticated: false,
 };
 
