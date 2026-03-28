@@ -1,4 +1,4 @@
-export default function Profile() {
+function Profile() {
     return (
         <>
             <div className="flex flex-col gap-2 p-3">
@@ -67,3 +67,5 @@ export default function Profile() {
         </>
     );
 }
+
+export default Profile;
