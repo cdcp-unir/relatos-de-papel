@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router';
 import { Button } from '../../../shared/components/Button';
 import { Header } from '../../../shared/components/Header';
 import { InputText, InputPassword } from '../../../shared/components/InputText';
-import './LoginPage.css';
 import { login } from './LoginService';
 
 export default function LoginPage() {
@@ -36,31 +35,33 @@ export default function LoginPage() {
     }
   }
 
-  return <div className="login-page">
-    <Header />
+  return (
+    <div className="min-h-screen w-full text-white flex flex-col items-center">
+      <Header />
 
-    <section className="login-section">
-      <h3 className="title">Iniciar sesión</h3>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <InputText
-          label="Nombre de usuario"
-          id="username"
-          name="username"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-        />
-        <InputPassword
-          label="Contraseña"
-          id="password"
-          name="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
+      <section className="flex flex-col items-center justify-center h-[calc(100vh-80px)] min-w-[300px]">
+        <h3 className="my-8 mx-auto text-2xl">Iniciar sesión</h3>
+        <form className="flex flex-col items-center justify-center w-full gap-4" onSubmit={handleSubmit}>
+          <InputText
+            label="Nombre de usuario"
+            id="username"
+            name="username"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+          />
+          <InputPassword
+            label="Contraseña"
+            id="password"
+            name="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
 
-        <Button className="login-button" type="submit" isLoading={isLoading}>Iniciar sesión</Button>
-        
-        {error && <p className="error-message">{error}</p>}
-      </form>
-    </section>
-  </div >;
+          <Button className="w-full mt-8 btn-primary" type="submit" isLoading={isLoading}>Iniciar sesión</Button>
+
+          {error && <p className="text-red-500 text-xl mt-4">{error}</p>}
+        </form>
+      </section>
+    </div>
+  );
 }
