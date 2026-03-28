@@ -1,5 +1,7 @@
-import logo from '../assets/img/logo.png';
+import { Link } from 'react-router';
+import logo from '../../assets/img/logo.png';
 import './Header.css';
+import { PATHS } from '../../app/router/paths';
 
 
 const LanguageSelector = () => (
@@ -9,11 +11,11 @@ const LanguageSelector = () => (
 );
 
 export const Header = () => (
-  <header className="header">
+  <Link to={PATHS.LANDING} className="header">
     <section className="header-logo">
       <img src={logo} alt="logo" />
       <p>Relatos de Papel</p>
     </section>
     <LanguageSelector />
-  </header>
+  </Link>
 );

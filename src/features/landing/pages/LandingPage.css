@@ -6,7 +6,7 @@
     color: var(--color-text);
 }
 
-.landing-content {
+.landing-page .landing-content {
     flex: 1;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -17,13 +17,13 @@
     margin: 0 auto;
 }
 
-.text-content {
+.landing-page .text-content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.title {
+.landing-page .title {
     font-family: var(--font-serif);
     font-size: 5rem;
     line-height: 1.1;
@@ -31,7 +31,7 @@
     color: var(--color-text);
 }
 
-.subtitle {
+.landing-page .subtitle {
     font-family: var(--font-sans);
     font-size: 1.6rem;
     line-height: 1.4;
@@ -40,12 +40,12 @@
     max-width: 450px;
 }
 
-.image-content {
+.landing-page .image-content {
     display: flex;
     justify-content: flex-end;
 }
 
-.hero-image {
+.landing-page .hero-image {
     width: 100%;
     max-width: 550px;
     height: auto;

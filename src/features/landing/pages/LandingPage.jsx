@@ -1,10 +1,13 @@
+import { useNavigate } from 'react-router';
 import bookshelf from '../../../assets/img/bookshelf.png';
-import { Button } from '../../../components/Button';
-import { Header } from '../../../components/Header';
+import { Button } from '../../../shared/components/Button';
+import { Header } from '../../../shared/components/Header';
 import './LandingPage.css';
+import { PATHS } from '../../../app/router/paths';
 
 
 export default function LandingPage() {
+  const navigate = useNavigate();
   return (
     <div className="landing-page">
       <Header />
@@ -15,7 +18,7 @@ export default function LandingPage() {
           <p className="subtitle">
             Explora nuestra colección y encuentra tu próxima gran lectura.
           </p>
-          <Button className="explore-button">Explorar ahora</Button>
+          <Button className="explore-button" onClick={() => navigate(PATHS.HOME)}>Explorar ahora</Button>
         </section>
 
         <section className="image-content">

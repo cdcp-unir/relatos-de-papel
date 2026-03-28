@@ -17,4 +17,8 @@
     transform: translateY(-2px);
 }
 
-
+.button:disabled {
+    background-color: var(--color-accent-dark);
+    transform: translateY(0);
+    cursor: not-allowed;
+}
