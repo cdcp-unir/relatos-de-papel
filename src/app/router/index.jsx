@@ -3,6 +3,8 @@ import RootLayout from "../layouts/RootLayout";
 import AuthLayout from "../layouts/AuthLayout";
 
 import HomePage from "../../features/home/pages/HomePage";
+import CartPage from "../../features/cart/pages/CartPage";
+import CheckoutPage from "../../features/checkout/pages/CheckoutPage";
 import LoginPage from "../../features/auth/pages/LoginPage";
 import RegisterPage from "../../features/auth/pages/RegisterPage";
 import NotFoundPage from "../../features/not-found/pages/NotFoundPage";
@@ -69,11 +71,11 @@ const router = createBrowserRouter([
       },
       {
         path: PATHS.CART,
-        element: <h1>Carrito</h1>,
+        element: <CartPage />,
       },
       {
         path: PATHS.CHECKOUT,
-        element: <h1>Detalle de carrito</h1>,
+        element: <CheckoutPage />,
       },
     ],
   },

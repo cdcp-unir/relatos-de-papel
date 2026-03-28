@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "titulo": "Los Tres Mundos",
+        "descripcion": "La conquista de las Galias por Julio César.",
+        "precio": 19.99,
+        "imagen": "https://www.elboletin.com/wp-content/uploads/2025/10/los-tres-mundos-santiago-posteguillo.jpg"
+    },
+    {
+        "id": 2,
+        "titulo": "Hábitos Atómicos",
+        "descripcion": "Guía práctica para construir hábitos positivos y eliminar los negativos.",
+        "precio": 15.50,
+        "imagen": "https://libroverde.org/wp-content/uploads/2024/04/9789569987632-1.jpg"
+    },
+    {
+        "id": 3,
+        "titulo": "El Arte Perdido",
+        "descripcion": "Una exploración sobre técnicas olvidadas en la historia del arte.",
+        "precio": 22.00,
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_688337-CBT73252121454_122023-O.webp"
+    },
+    {
+        "id": 4,
+        "titulo": "Cien Años de Soledad",
+        "descripcion": "La obra maestra de Gabriel García Márquez sobre la familia Buendía.",
+        "precio": 18.75,
+        "imagen": "https://www.mejoreslibros.top/wp-content/uploads/2020/09/Cien-anos-de-Soledad-50-Aniversario-1141x1536.jpg"
+    },
+    {
+        "id": 5,
+        "titulo": "Sapiens",
+        "descripcion": "Breve historia de la humanidad por Yuval Noah Harari.",
+        "precio": 20.00,
+        "imagen": "https://www.marcialpons.es/media/img/portadas/2025/5/22/9788466380461jfif"
+    },
+    {
+        "id": 6,
+        "titulo": "El Poder del Ahora",
+        "descripcion": "Un viaje hacia la conciencia plena y la espiritualidad.",
+        "precio": 14.99,
+        "imagen": "https://ts2.mm.bing.net/th?id=OIP.sa-dEW8evnd-grYaYX3YyQHaLG&pid=15.1"
+    },
+    {
+        "id": 7,
+        "titulo": "1984",
+        "descripcion": "La distopía clásica de George Orwell sobre vigilancia y control.",
+        "precio": 12.50,
+        "imagen": "https://ts4.mm.bing.net/th?id=OIP.pNF-aiWgWwq1smsoYWFNngHaLn&pid=15.1"
+    },
+    {
+        "id": 8,
+        "titulo": "Padre Rico, Padre Pobre",
+        "descripcion": "Lecciones sobre finanzas personales y mentalidad de riqueza.",
+        "precio": 16.00,
+        "imagen": "https://ts1.mm.bing.net/th?id=OIP.ex6t7C_WFq8NAr8RrlUBhgAAAA&pid=15.1"
+    },
+    {
+        "id": 9,
+        "titulo": "La Sombra del Viento",
+        "descripcion": "Una novela de misterio y amor ambientada en Barcelona.",
+        "precio": 17.25,
+        "imagen": "https://ts1.explicit.bing.net/th?id=OIP.p0ik95sPzNr4qTDku7ToUgHaLV&pid=15.1"
+    },
+    {
+        "id": 10,
+        "titulo": "El Alquimista",
+        "descripcion": "La fábula de Paulo Coelho sobre seguir los sueños.",
+        "precio": 13.99,
+        "imagen": "https://ts1.mm.bing.net/th?id=OIP.ZUTT-OCfXGEKNpy_IYemOAHaKG&pid=15.1"
+    }
+]
