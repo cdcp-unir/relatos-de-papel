@@ -1,3 +1,5 @@
+import books from "./../../../mocks/books.json"
+
 const Profile = () => {
     return (
         <>
@@ -22,46 +24,15 @@ const Profile = () => {
                 <ul className="list bg-base-100 rounded-box shadow-md">
 
                     <li className="p-4 pb-2 opacity-60 tracking-wide text-3xl">Tus pedidos más recientes</li>
-
-                    <li className="list-row">
-                        <div><img className="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp" /></div>
-                        <div>
-                            <div className="text-xl">Las crónicas de Narnia - El viajero del alba</div>
-                            <div className="text-xs uppercase font-semibold opacity-60">C. S. Lewis</div>
-                        </div>
-                    </li>
-
-                    <li className="list-row">
-                        <div><img className="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp" /></div>
-                        <div>
-                            <div className="text-xl">Cien años de soledad</div>
-                            <div className="text-xs uppercase font-semibold opacity-60">Gabriel García Marquez</div>
-                        </div>
-                    </li>
-
-                    <li className="list-row">
-                        <div><img className="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp" /></div>
-                        <div>
-                            <div className="text-xl">Freddy el hamster</div>
-                            <div className="text-xs uppercase font-semibold opacity-60">Dietlof Reiche</div>
-                        </div>
-                    </li>
-
-                    <li className="list-row">
-                        <div><img className="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp" /></div>
-                        <div>
-                            <div className="text-xl">Amigo se escribe con H</div>
-                            <div className="text-xs uppercase font-semibold opacity-60">Maria Fernanda Heredia</div>
-                        </div>
-                    </li>
-
-                    <li className="list-row">
-                        <div><img className="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp" /></div>
-                        <div>
-                            <div className="text-xl">Voces en la arena</div>
-                            <div className="text-xs uppercase font-semibold opacity-60">Helena Burbano</div>
-                        </div>
-                    </li>
+                    {books.slice(0, 5).map((book) => (
+                        <li className="list-row">                            
+                            <div>
+                                <div className="text-xl">{book.titulo}</div>
+                                <div className="text-xs uppercase font-semibold opacity-60">{book.autor}</div>
+                                <div className="text-xs uppercase font-semibold opacity-60">{book.precio}</div>
+                            </div>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </>
