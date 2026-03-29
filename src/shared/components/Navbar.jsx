@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+import { PATHS } from "./../../app/router/paths";
+
 const Navbar = () => {
     return (
         <>
-            <div className="navbar bg-base-100 shadow-sm">
+            <div className="max-auto">
                 <div className="flex-1">
-                    <a className="btn btn-ghost text-xl">Relatos de papel</a>
+                    <Link className="btn btn-ghost text-3xl font-bold" to={PATHS.HOME}>Relatos de papel</Link>                    
                 </div>
                 <div className="flex-none">
                     <div className="dropdown dropdown-end">
@@ -13,37 +16,35 @@ const Navbar = () => {
                                 <span className="badge badge-sm indicator-item">8</span>
                             </div>
                         </div>
-                        <div
-                            tabIndex={0}
-                            className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
+                        <div tabIndex={0} className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
                             <div className="card-body">
                                 <span className="text-lg font-bold">8 Items</span>
                                 <span className="text-info">Subtotal: $999</span>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary btn-block">View cart</button>
+                                <div className="card-actions">                                    
+                                    <Link to={PATHS.CART} className="btn btn-primary btn-block">Ver carrito</Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img
-                                    alt="Tailwind CSS Navbar component"
-                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                            </div>
+                            <div className="avatar avatar-placeholder">
+                                <div className="bg-neutral text-neutral-content w-8 rounded-full">
+                                    <span className="text-xs">CC</span>
+                                </div>
+                            </div>                            
                         </div>
-                        <ul
-                            tabIndex="-1"
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
+                        <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li className="p-4 pb-2 tracking-wide text-xs">Hola Cristian Chiguano</li>
+                            <li>                                
+                                <Link className="text-xs" to={PATHS.PROFILE}>Perfil</Link>
                             </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
+                            <li>
+                                <Link className="text-xs" to={PATHS.CHECKOUT}>Checkout</Link>
+                            </li>
+                            <li>
+                                <Link className="text-xs">Salir</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

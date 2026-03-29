@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
-import logo from '../../assets/img/logo.png';
 import { PATHS } from '../../app/router/paths';
+import logo from '../../assets/img/logo.png';
 import spanish from '../../assets/svg/spanish.svg';
 
 const LanguageSelector = () => (
