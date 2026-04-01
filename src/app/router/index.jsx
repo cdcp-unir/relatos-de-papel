@@ -1,8 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import AuthLayout from "../layouts/AuthLayout";
-
-import AuthLayout from "../layouts/AuthLayout";
 import CartPage from "../../features/cart/pages/CartPage";
 import CheckoutPage from "../../features/checkout/pages/CheckoutPage";
 import HomePage from "../../features/home/pages/HomePage";
@@ -14,7 +12,7 @@ import PrivateLayout from "../layouts/PrivateLayout";
 import Profile from '../../features/profile/pages/Profile';
 import ProtectedRoute from "../../shared/components/ProtectedRoute";
 import RegisterPage from "../../features/auth/pages/RegisterPage";
-import RootLayout from "../layouts/RootLayout";
+
 import { isAuthenticated } from "../../state/loginState";
 
 const router = createBrowserRouter([
