@@ -1,6 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
-import RootLayout from "../layouts/RootLayout";
-import AuthLayout from "../layouts/AuthLayout";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 
 import AuthLayout from "../layouts/AuthLayout";
 import CartPage from "../../features/cart/pages/CartPage";
@@ -67,7 +65,7 @@ const router = createBrowserRouter([
           },
           {
             path: PATHS.PROFILE,
-            element: <h1>Página de perfil</h1>,
+             element: <Profile />,
           },
           {
             path: PATHS.CART,
