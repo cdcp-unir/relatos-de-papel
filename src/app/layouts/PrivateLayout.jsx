@@ -4,8 +4,6 @@ import Footer from "../../shared/components/Footer";
 import Navbar from "../../shared/components/Navbar";
 import { PATHS } from "../router/paths";
 import ThemeToggle from "../../shared/components/ThemeToggle";
-import Navbar from "../../shared/components/Navbar";
-import Footer from "../../shared/components/Footer";
 
 const linkStyle = ({ isActive }) => ({
   padding: "0.75rem 1rem",
