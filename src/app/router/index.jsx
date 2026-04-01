@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from "react-router";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 
 import AuthLayout from "../layouts/AuthLayout";
 import CartPage from "../../features/cart/pages/CartPage";
@@ -18,11 +18,10 @@ import BookDetail from "../../features/books-details/pages/BookDetail";
 
 const router = createBrowserRouter([
   {
-    path: PATHS.LANDING,
     element: <RootLayout />,
     children: [
       {
-        index: true,
+        path: PATHS.LANDING,
         element: <LandingPage />,
       },
       {
@@ -35,31 +34,54 @@ const router = createBrowserRouter([
     element: <AuthLayout />,
     children: [
       {
-        path: PATHS.LOGIN,
-        element: isAuthenticated() ? (
-          <Navigate to={PATHS.PROFILE} replace />
-        ) : (
-          <LoginPage />
-        ),
+        element: <AuthLayout />,
+        children: [
+          {
+            path: PATHS.LOGIN,
+            element: isAuthenticated() ? (
+              <Navigate to={PATHS.PROFILE} replace />
+            ) : (
+              <LoginPage />
+            ),
+          },
+          {
+            path: PATHS.REGISTER,
+            element: isAuthenticated() ? (
+              <Navigate to={PATHS.PROFILE} replace />
+            ) : (
+              <RegisterPage />
+            ),
+          },
+        ],
       },
       {
-        path: PATHS.REGISTER,
-        element: isAuthenticated() ? (
-          <Navigate to={PATHS.PROFILE} replace />
-        ) : (
-          <RegisterPage />
+        element: (
+          <ProtectedRoute>
+            <PrivateLayout />
+          </ProtectedRoute>
         ),
+        children: [
+          {
+            path: PATHS.HOME,
+            element: <HomePage />,
+          },
+          {
+            path: PATHS.PROFILE,
+            element: <Profile />,
+          },
+          {
+            path: PATHS.CART,
+            element: <CartPage />,
+          },
+          {
+            path: PATHS.CHECKOUT,
+            element: <CheckoutPage />,
+          },
+        ],
       },
-    ],
-  },
-  {
-    element: (
-      <ProtectedRoute>
-        <PrivateLayout />
-      </ProtectedRoute>
-    ),
-    children: [
       {
+        path: "*",
+        element: <NotFoundPage />,
         path: PATHS.HOME,
         element: <HomePage />,
       },
@@ -80,10 +102,6 @@ const router = createBrowserRouter([
         element: <CheckoutPage />,
       },
     ],
-  },
-  {
-    path: "*",
-    element: <NotFoundPage />,
   },
 ]);
 
