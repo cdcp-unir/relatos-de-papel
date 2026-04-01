@@ -3,10 +3,8 @@ import { ThemeProvider } from "../../shared/context/ThemeContext";
 
 export default function RootLayout() {
   return (
-    <ThemeProvider>
       <main>
         <Outlet />
       </main>
-    </ThemeProvider>
   );
 }
