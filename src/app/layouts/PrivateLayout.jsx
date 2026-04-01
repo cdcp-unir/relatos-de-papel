@@ -1,5 +1,6 @@
-import { Outlet, NavLink } from "react-router";
+import { Outlet, NavLink } from "react-router-dom";
 import { PATHS } from "../router/paths";
+import ThemeToggle from "../../shared/components/ThemeToggle";
 
 const linkStyle = ({ isActive }) => ({
   padding: "0.75rem 1rem",
@@ -26,6 +27,7 @@ export default function PrivateLayout() {
           <NavLink to={PATHS.CHECKOUT} style={linkStyle}>
             Checkout
           </NavLink>
+           <ThemeToggle />
         </nav>
       </aside>
 
