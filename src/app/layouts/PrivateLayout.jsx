@@ -1,4 +1,7 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
+
+import Footer from "../../shared/components/Footer";
+import Navbar from "../../shared/components/Navbar";
 import { PATHS } from "../router/paths";
 import ThemeToggle from "../../shared/components/ThemeToggle";
 
