@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import logo from '../../assets/img/logo.png';
+import logo from '../../assets/img/logo.svg';
 import { PATHS } from '../../app/router/paths';
 import spanish from '../../assets/svg/spanish.svg';
 
@@ -13,11 +13,24 @@ const LanguageSelector = () => (
 );
 
 export const Header = () => (
-  <Link to={PATHS.LANDING} className="w-full flex justify-between items-center py-4 px-6 no-underline">
-    <section className="flex items-center gap-4">
-      <img src={logo} alt="logo" className="w-12 h-auto" />
-      <p className="text-md font-bold m-0 text-white">Relatos de Papel</p>
-    </section>
-    <LanguageSelector />
-  </Link>
+  <div className="navbar bg-color-info-content-100 shadow-sm">
+  <div className="flex-1">
+    <Link className="btn btn-info-content text-xl"> <img src={logo} alt="logo" className="w-12 h-12 text-blue-700 dark:text-white"/>Relatos de papel</Link>
+  </div>
+  <div className="flex-none">
+    <ul className="menu menu-horizontal px-1">
+      <LanguageSelector />
+      <li><a>Link</a></li>
+      <li>
+        <details>
+          <summary>Parent</summary>
+          <ul className="bg-base-100 rounded-t-none p-2">
+            <li><a>Link 1</a></li>
+            <li><a>Link 2</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+</div>
 );
