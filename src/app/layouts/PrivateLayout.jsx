@@ -1,8 +1,6 @@
-import { NavLink, Outlet } from "react-router";
-
-import Footer from "../../shared/components/Footer";
-import Navbar from "../../shared/components/Navbar";
+import { Outlet, NavLink } from "react-router-dom";
 import { PATHS } from "../router/paths";
+import ThemeToggle from "../../shared/components/ThemeToggle";
 
 const linkStyle = ({ isActive }) => ({
   padding: "0.75rem 1rem",
