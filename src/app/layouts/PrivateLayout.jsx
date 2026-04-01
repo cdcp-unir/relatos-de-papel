@@ -13,27 +13,16 @@ const linkStyle = ({ isActive }) => ({
 
 export default function PrivateLayout() {
   return (
-    <div style={{ minHeight: "100vh", display: "grid", gridTemplateColumns: "240px 1fr" }}>
-      <aside style={{ borderRight: "1px solid #e5e7eb", padding: "1rem" }}>
-        <h2 style={{ marginBottom: "1rem" }}>Panel privado</h2>
+    <>
+      <Navbar />
 
-        <nav style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-          <NavLink to={PATHS.PROFILE} style={linkStyle}>
-            Perfil
-          </NavLink>
-          <NavLink to={PATHS.CART} style={linkStyle}>
-            Carrito
-          </NavLink>
-          <NavLink to={PATHS.CHECKOUT} style={linkStyle}>
-            Checkout
-          </NavLink>
-           <ThemeToggle />
-        </nav>
-      </aside>
+      <div className="grid p-3">
+        <main className="p-2 w-full">
+          <Outlet />
+        </main>
+      </div>
 
-      <main style={{ padding: "2rem" }}>
-        <Outlet />
-      </main>
-    </div>
+      <Footer />
+    </>
   );
 }
