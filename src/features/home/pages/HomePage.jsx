@@ -1,12 +1,13 @@
-import React from 'react';
 import Book from '../../../shared/components/Book';
 import SearchBar from '../../../shared/components/SearchBar';
+import { Header } from '../../../shared/components/Header';
 import Label from '../../../shared/components/Label';
-
+import Books from '../../../mocks/books.json'
 
 function HomePage() {
   return (
     <>
+      <Header />
       <SearchBar />
       <Label texto="Libros Destacados" />
       <div style={{
@@ -14,12 +15,13 @@ function HomePage() {
         gridTemplateColumns: "1fr 1fr",
         placeItems: "center"
       }}>
-        <Book titulo="Los Tres Mundos" rutaImagen='https://anterior.mrbooks.com/mrbooks/portadas/9786287634923.webp' />
-        <Book titulo="Habitos Atomicos" rutaImagen='https://anterior.mrbooks.com/mrbooks/portadas/9789584277954.webp' />
-        <Book titulo="Dan Brown" rutaImagen='https://anterior.mrbooks.com/mrbooks/portadas/9786287779877.webp' />
-        <Book titulo="Super Diaper Baby" rutaImagen='https://anterior.mrbooks.com/mrbooks/portadas/9781338687859.webp' />
-        <Book titulo="MR.BOOKS" rutaImagen='https://anterior.mrbooks.com/portada_default.jpg' />
-        <Book titulo="Amulet" rutaImagen='https://anterior.mrbooks.com/mrbooks/portadas/9780545828604.webp' />
+        {
+          Books.map((element, index) => {
+            return (
+              <Book titulo={element.titulo} rutaImagen={element.portadas} detalle={element.detalle} />
+            )
+          })
+        }
       </div>
     </>
   );

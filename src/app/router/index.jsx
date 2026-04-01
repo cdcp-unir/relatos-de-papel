@@ -14,6 +14,7 @@ import ProtectedRoute from "../../shared/components/ProtectedRoute";
 import RegisterPage from "../../features/auth/pages/RegisterPage";
 import RootLayout from "../layouts/RootLayout";
 import { isAuthenticated } from "../../state/loginState";
+import BookDetail from "../../features/books-details/pages/BookDetail";
 
 const router = createBrowserRouter([
   {
@@ -27,10 +28,6 @@ const router = createBrowserRouter([
       {
         path: PATHS.BOOKS,
         element: <h1>Libros</h1>,
-      },
-      {
-        path: PATHS.BOOK_DETAIL,
-        element: <h1>Detalle del libro</h1>,
       },
     ],
   },
@@ -65,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: PATHS.HOME,
         element: <HomePage />,
+      },
+      {
+        path: PATHS.BOOK_DETAIL,
+        element: < BookDetail />,
       },
       {
         path: PATHS.PROFILE,
