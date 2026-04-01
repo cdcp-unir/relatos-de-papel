@@ -1,8 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import AuthLayout from "../layouts/AuthLayout";
-
-import AuthLayout from "../layouts/AuthLayout";
 import CartPage from "../../features/cart/pages/CartPage";
 import CheckoutPage from "../../features/checkout/pages/CheckoutPage";
 import HomePage from "../../features/home/pages/HomePage";
@@ -14,8 +12,9 @@ import PrivateLayout from "../layouts/PrivateLayout";
 import Profile from '../../features/profile/pages/Profile';
 import ProtectedRoute from "../../shared/components/ProtectedRoute";
 import RegisterPage from "../../features/auth/pages/RegisterPage";
-import RootLayout from "../layouts/RootLayout";
+
 import { isAuthenticated } from "../../state/loginState";
+import BookDetail from "../../features/books-details/pages/BookDetail";
 
 const router = createBrowserRouter([
   {
@@ -29,10 +28,11 @@ const router = createBrowserRouter([
         path: PATHS.BOOKS,
         element: <h1>Libros</h1>,
       },
-      {
-        path: PATHS.BOOK_DETAIL,
-        element: <h1>Detalle del libro</h1>,
-      },
+    ],
+  },
+  {
+    element: <AuthLayout />,
+    children: [
       {
         element: <AuthLayout />,
         children: [
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
           },
           {
             path: PATHS.PROFILE,
-            element: <h1>Página de perfil</h1>,
+            element: <Profile />,
           },
           {
             path: PATHS.CART,
@@ -84,6 +84,10 @@ const router = createBrowserRouter([
         element: <NotFoundPage />,
         path: PATHS.HOME,
         element: <HomePage />,
+      },
+      {
+        path: PATHS.BOOK_DETAIL,
+        element: < BookDetail />,
       },
       {
         path: PATHS.PROFILE,
