@@ -9,7 +9,7 @@
     "stock": 32,
     "detalle": "Una historia sobre autodescubrimiento en un pequeño pueblo andino.",
     "ranking": 4.5,
-    "portadas": "https://example.com/covers/1.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Ediciones Andinas",
     "fecha": "2021-06-12"
   },
@@ -23,7 +23,7 @@
     "stock": 12,
     "detalle": "Una aventura tecnológica que explora los límites de la inteligencia artificial.",
     "ranking": 4.2,
-    "portadas": "https://example.com/covers/2.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Futuris Editorial",
     "fecha": "2019-11-04"
   },
@@ -37,7 +37,7 @@
     "stock": 40,
     "detalle": "Un thriller psicológico lleno de misterio y giros inesperados.",
     "ranking": 4.7,
-    "portadas": "https://example.com/covers/3.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Punto Rojo",
     "fecha": "2020-02-18"
   },
@@ -51,7 +51,7 @@
     "stock": 15,
     "detalle": "Manual completo para iniciarse en la fotografía del cielo nocturno.",
     "ranking": 4.6,
-    "portadas": "https://example.com/covers/4.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Cosmos Press",
     "fecha": "2022-01-12"
   },
@@ -65,7 +65,7 @@
     "stock": 50,
     "detalle": "Recetas tradicionales transmitidas de generación en generación.",
     "ranking": 4.8,
-    "portadas": "https://example.com/covers/5.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Sabores del Ayer",
     "fecha": "2018-09-30"
   },
@@ -79,7 +79,7 @@
     "stock": 22,
     "detalle": "Una expedición a través de los Andes llena de retos y aprendizajes.",
     "ranking": 4.3,
-    "portadas": "https://example.com/covers/6.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Altura Editores",
     "fecha": "2020-08-21"
   },
@@ -93,7 +93,7 @@
     "stock": 60,
     "detalle": "Colección de relatos sobre la vida cotidiana y los sueños humanos.",
     "ranking": 4.1,
-    "portadas": "https://example.com/covers/7.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Luna Nueva",
     "fecha": "2017-05-17"
   },
@@ -107,7 +107,7 @@
     "stock": 18,
     "detalle": "Análisis y métodos para construir sociedades más responsables.",
     "ranking": 4.4,
-    "portadas": "https://example.com/covers/8.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "EcoPrint",
     "fecha": "2023-03-22"
   },
@@ -121,7 +121,7 @@
     "stock": 28,
     "detalle": "Un enfoque amigable para comprender conceptos matemáticos.",
     "ranking": 4.0,
-    "portadas": "https://example.com/covers/9.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "EducArte",
     "fecha": "2016-04-11"
   },
@@ -135,7 +135,7 @@
     "stock": 14,
     "detalle": "Una novela emotiva sobre la memoria y el paso del tiempo.",
     "ranking": 4.6,
-    "portadas": "https://example.com/covers/10.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Letra Viva",
     "fecha": "2021-10-01"
   },
@@ -149,7 +149,7 @@
     "stock": 63,
     "detalle": "Descripción ficticia del libro 11 con contenido variado.",
     "ranking": 4.7,
-    "portadas": "https://example.com/covers/11.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "NovaPrint",
     "fecha": "2019-04-08"
   },
@@ -163,7 +163,7 @@
     "stock": 81,
     "detalle": "Descripción ficticia del libro 12 con contenido variado.",
     "ranking": 4.9,
-    "portadas": "https://example.com/covers/12.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "NovaPrint",
     "fecha": "2022-03-29"
   },
@@ -177,7 +177,7 @@
     "stock": 85,
     "detalle": "Descripción ficticia del libro 13 con contenido variado.",
     "ranking": 4.0,
-    "portadas": "https://example.com/covers/13.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "NovaPrint",
     "fecha": "2021-03-05"
   },
@@ -191,7 +191,7 @@
     "stock": 54,
     "detalle": "Descripción ficticia del libro 14 con contenido variado.",
     "ranking": 4.9,
-    "portadas": "https://example.com/covers/14.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "NovaPrint",
     "fecha": "2017-06-03"
   },
@@ -205,7 +205,7 @@
     "stock": 61,
     "detalle": "Descripción ficticia del libro 15 con contenido variado.",
     "ranking": 4.1,
-    "portadas": "https://example.com/covers/15.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Luz del Saber",
     "fecha": "2024-05-07"
   },
@@ -219,7 +219,7 @@
     "stock": 95,
     "detalle": "Descripción ficticia del libro 16 con contenido variado.",
     "ranking": 4.1,
-    "portadas": "https://example.com/covers/16.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Editorial Horizonte",
     "fecha": "2022-01-07"
   },
@@ -233,7 +233,7 @@
     "stock": 82,
     "detalle": "Descripción ficticia del libro 17 con contenido variado.",
     "ranking": 4.9,
-    "portadas": "https://example.com/covers/17.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "NovaPrint",
     "fecha": "2022-01-21"
   },
@@ -247,7 +247,7 @@
     "stock": 31,
     "detalle": "Descripción ficticia del libro 18 con contenido variado.",
     "ranking": 4.5,
-    "portadas": "https://example.com/covers/18.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Libros del Sur",
     "fecha": "2016-10-10"
   },
@@ -261,7 +261,7 @@
     "stock": 61,
     "detalle": "Descripción ficticia del libro 19 con contenido variado.",
     "ranking": 4.2,
-    "portadas": "https://example.com/covers/19.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Luz del Saber",
     "fecha": "2021-11-21"
   },
@@ -275,7 +275,7 @@
     "stock": 35,
     "detalle": "Descripción ficticia del libro 20 con contenido variado.",
     "ranking": 3.7,
-    "portadas": "https://example.com/covers/20.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Luz del Saber",
     "fecha": "2015-03-08"
   },
@@ -289,7 +289,7 @@
     "stock": 33,
     "detalle": "Descripción ficticia del libro 21 con contenido variado.",
     "ranking": 3.6,
-    "portadas": "https://example.com/covers/21.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "NovaPrint",
     "fecha": "2015-06-17"
   },
@@ -303,7 +303,7 @@
     "stock": 81,
     "detalle": "Descripción ficticia del libro 22 con contenido variado.",
     "ranking": 4.5,
-    "portadas": "https://example.com/covers/22.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Libros del Sur",
     "fecha": "2022-05-21"
   },
@@ -317,7 +317,7 @@
     "stock": 76,
     "detalle": "Descripción ficticia del libro 23 con contenido variado.",
     "ranking": 5.0,
-    "portadas": "https://example.com/covers/23.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Luz del Saber",
     "fecha": "2018-04-20"
   },
@@ -331,7 +331,7 @@
     "stock": 60,
     "detalle": "Descripción ficticia del libro 24 con contenido variado.",
     "ranking": 4.4,
-    "portadas": "https://example.com/covers/24.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Libros del Sur",
     "fecha": "2017-05-21"
   },
@@ -345,7 +345,7 @@
     "stock": 18,
     "detalle": "Descripción ficticia del libro 25 con contenido variado.",
     "ranking": 4.9,
-    "portadas": "https://example.com/covers/25.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Libros del Sur",
     "fecha": "2021-04-06"
   },
@@ -359,7 +359,7 @@
     "stock": 83,
     "detalle": "Descripción ficticia del libro 26 con contenido variado.",
     "ranking": 3.8,
-    "portadas": "https://example.com/covers/26.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Libros del Sur",
     "fecha": "2016-10-13"
   },
@@ -373,7 +373,7 @@
     "stock": 97,
     "detalle": "Descripción ficticia del libro 27 con contenido variado.",
     "ranking": 4.0,
-    "portadas": "https://example.com/covers/27.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Pluma Dorada",
     "fecha": "2017-04-01"
   },
@@ -387,7 +387,7 @@
     "stock": 29,
     "detalle": "Descripción ficticia del libro 28 con contenido variado.",
     "ranking": 3.6,
-    "portadas": "https://example.com/covers/28.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Libros del Sur",
     "fecha": "2023-12-17"
   },
@@ -401,7 +401,7 @@
     "stock": 66,
     "detalle": "Descripción ficticia del libro 29 con contenido variado.",
     "ranking": 3.6,
-    "portadas": "https://example.com/covers/29.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Libros del Sur",
     "fecha": "2022-04-26"
   },
@@ -415,7 +415,7 @@
     "stock": 25,
     "detalle": "Descripción ficticia del libro 30 con contenido variado.",
     "ranking": 4.6,
-    "portadas": "https://example.com/covers/30.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Libros del Sur",
     "fecha": "2020-06-11"
   },
@@ -429,7 +429,7 @@
     "stock": 74,
     "detalle": "Descripción ficticia del libro 31 con contenido variado.",
     "ranking": 4.6,
-    "portadas": "https://example.com/covers/31.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Editorial Horizonte",
     "fecha": "2016-12-18"
   },
@@ -443,7 +443,7 @@
     "stock": 42,
     "detalle": "Descripción ficticia del libro 32 con contenido variado.",
     "ranking": 3.6,
-    "portadas": "https://example.com/covers/32.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Luz del Saber",
     "fecha": "2021-05-31"
   },
@@ -457,7 +457,7 @@
     "stock": 79,
     "detalle": "Descripción ficticia del libro 33 con contenido variado.",
     "ranking": 4.0,
-    "portadas": "https://example.com/covers/33.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Luz del Saber",
     "fecha": "2020-12-23"
   },
@@ -471,7 +471,7 @@
     "stock": 32,
     "detalle": "Descripción ficticia del libro 34 con contenido variado.",
     "ranking": 4.7,
-    "portadas": "https://example.com/covers/34.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Editorial Horizonte",
     "fecha": "2015-01-12"
   },
@@ -485,7 +485,7 @@
     "stock": 19,
     "detalle": "Descripción ficticia del libro 35 con contenido variado.",
     "ranking": 3.5,
-    "portadas": "https://example.com/covers/35.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Pluma Dorada",
     "fecha": "2016-09-04"
   },
@@ -499,7 +499,7 @@
     "stock": 93,
     "detalle": "Descripción ficticia del libro 36 con contenido variado.",
     "ranking": 4.5,
-    "portadas": "https://example.com/covers/36.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Editorial Horizonte",
     "fecha": "2022-04-01"
   },
@@ -513,7 +513,7 @@
     "stock": 51,
     "detalle": "Descripción ficticia del libro 37 con contenido variado.",
     "ranking": 3.9,
-    "portadas": "https://example.com/covers/37.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Editorial Horizonte",
     "fecha": "2015-04-04"
   },
@@ -527,7 +527,7 @@
     "stock": 58,
     "detalle": "Descripción ficticia del libro 38 con contenido variado.",
     "ranking": 3.7,
-    "portadas": "https://example.com/covers/38.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "NovaPrint",
     "fecha": "2024-03-06"
   },
@@ -541,7 +541,7 @@
     "stock": 8,
     "detalle": "Descripción ficticia del libro 39 con contenido variado.",
     "ranking": 3.8,
-    "portadas": "https://example.com/covers/39.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Luz del Saber",
     "fecha": "2020-06-14"
   },
@@ -555,7 +555,7 @@
     "stock": 82,
     "detalle": "Descripción ficticia del libro 40 con contenido variado.",
     "ranking": 4.3,
-    "portadas": "https://example.com/covers/40.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "NovaPrint",
     "fecha": "2019-08-26"
   },
@@ -569,7 +569,7 @@
     "stock": 35,
     "detalle": "Descripción ficticia del libro 41 con contenido variado.",
     "ranking": 4.6,
-    "portadas": "https://example.com/covers/41.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Pluma Dorada",
     "fecha": "2024-01-20"
   },
@@ -583,7 +583,7 @@
     "stock": 12,
     "detalle": "Descripción ficticia del libro 42 con contenido variado.",
     "ranking": 4.7,
-    "portadas": "https://example.com/covers/42.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Editorial Horizonte",
     "fecha": "2017-01-16"
   },
@@ -597,7 +597,7 @@
     "stock": 65,
     "detalle": "Descripción ficticia del libro 43 con contenido variado.",
     "ranking": 4.1,
-    "portadas": "https://example.com/covers/43.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Pluma Dorada",
     "fecha": "2020-04-27"
   },
@@ -611,7 +611,7 @@
     "stock": 71,
     "detalle": "Descripción ficticia del libro 44 con contenido variado.",
     "ranking": 4.4,
-    "portadas": "https://example.com/covers/44.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Luz del Saber",
     "fecha": "2016-08-20"
   },
@@ -625,7 +625,7 @@
     "stock": 75,
     "detalle": "Descripción ficticia del libro 45 con contenido variado.",
     "ranking": 4.0,
-    "portadas": "https://example.com/covers/45.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Libros del Sur",
     "fecha": "2022-11-06"
   },
@@ -639,7 +639,7 @@
     "stock": 67,
     "detalle": "Descripción ficticia del libro 46 con contenido variado.",
     "ranking": 3.9,
-    "portadas": "https://example.com/covers/46.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Pluma Dorada",
     "fecha": "2015-03-29"
   },
@@ -653,7 +653,7 @@
     "stock": 43,
     "detalle": "Descripción ficticia del libro 47 con contenido variado.",
     "ranking": 3.9,
-    "portadas": "https://example.com/covers/47.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Luz del Saber",
     "fecha": "2016-02-23"
   },
@@ -667,7 +667,7 @@
     "stock": 24,
     "detalle": "Descripción ficticia del libro 48 con contenido variado.",
     "ranking": 4.9,
-    "portadas": "https://example.com/covers/48.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Libros del Sur",
     "fecha": "2016-12-18"
   },
@@ -681,7 +681,7 @@
     "stock": 45,
     "detalle": "Descripción ficticia del libro 49 con contenido variado.",
     "ranking": 4.9,
-    "portadas": "https://example.com/covers/49.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Pluma Dorada",
     "fecha": "2017-07-23"
   },
@@ -695,7 +695,7 @@
     "stock": 99,
     "detalle": "Descripción ficticia del libro 50 con contenido variado.",
     "ranking": 4.2,
-    "portadas": "https://example.com/covers/50.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Pluma Dorada",
     "fecha": "2017-04-02"
   },
@@ -709,7 +709,7 @@
     "stock": 58,
     "detalle": "Descripción ficticia del libro 51 con contenido variado.",
     "ranking": 3.6,
-    "portadas": "https://example.com/covers/51.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Pluma Dorada",
     "fecha": "2019-08-06"
   },
@@ -723,7 +723,7 @@
     "stock": 27,
     "detalle": "Descripción ficticia del libro 52 con contenido variado.",
     "ranking": 4.1,
-    "portadas": "https://example.com/covers/52.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "NovaPrint",
     "fecha": "2016-09-01"
   },
@@ -737,7 +737,7 @@
     "stock": 64,
     "detalle": "Descripción ficticia del libro 53 con contenido variado.",
     "ranking": 4.1,
-    "portadas": "https://example.com/covers/53.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Pluma Dorada",
     "fecha": "2024-04-30"
   },
@@ -751,7 +751,7 @@
     "stock": 39,
     "detalle": "Descripción ficticia del libro 54 con contenido variado.",
     "ranking": 4.7,
-    "portadas": "https://example.com/covers/54.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Luz del Saber",
     "fecha": "2017-11-17"
   },
@@ -765,7 +765,7 @@
     "stock": 39,
     "detalle": "Descripción ficticia del libro 55 con contenido variado.",
     "ranking": 4.7,
-    "portadas": "https://example.com/covers/55.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "NovaPrint",
     "fecha": "2024-02-23"
   },
@@ -779,7 +779,7 @@
     "stock": 98,
     "detalle": "Descripción ficticia del libro 56 con contenido variado.",
     "ranking": 4.4,
-    "portadas": "https://example.com/covers/56.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Libros del Sur",
     "fecha": "2016-12-17"
   },
@@ -793,7 +793,7 @@
     "stock": 49,
     "detalle": "Descripción ficticia del libro 57 con contenido variado.",
     "ranking": 4.6,
-    "portadas": "https://example.com/covers/57.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Pluma Dorada",
     "fecha": "2015-01-03"
   },
@@ -807,7 +807,7 @@
     "stock": 85,
     "detalle": "Descripción ficticia del libro 58 con contenido variado.",
     "ranking": 3.7,
-    "portadas": "https://example.com/covers/58.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Luz del Saber",
     "fecha": "2016-05-02"
   },
@@ -821,7 +821,7 @@
     "stock": 92,
     "detalle": "Descripción ficticia del libro 59 con contenido variado.",
     "ranking": 3.6,
-    "portadas": "https://example.com/covers/59.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Luz del Saber",
     "fecha": "2023-04-15"
   },
@@ -835,7 +835,7 @@
     "stock": 99,
     "detalle": "Descripción ficticia del libro 60 con contenido variado.",
     "ranking": 4.3,
-    "portadas": "https://example.com/covers/60.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Luz del Saber",
     "fecha": "2016-10-08"
   },
@@ -849,7 +849,7 @@
     "stock": 78,
     "detalle": "Descripción ficticia del libro 61 con contenido variado.",
     "ranking": 4.3,
-    "portadas": "https://example.com/covers/61.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Luz del Saber",
     "fecha": "2022-06-21"
   },
@@ -863,7 +863,7 @@
     "stock": 34,
     "detalle": "Descripción ficticia del libro 62 con contenido variado.",
     "ranking": 4.2,
-    "portadas": "https://example.com/covers/62.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Pluma Dorada",
     "fecha": "2024-01-09"
   },
@@ -877,7 +877,7 @@
     "stock": 74,
     "detalle": "Descripción ficticia del libro 63 con contenido variado.",
     "ranking": 4.2,
-    "portadas": "https://example.com/covers/63.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "Libros del Sur",
     "fecha": "2019-05-12"
   },
@@ -891,7 +891,7 @@
     "stock": 35,
     "detalle": "Descripción ficticia del libro 64 con contenido variado.",
     "ranking": 4.3,
-    "portadas": "https://example.com/covers/64.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "Luz del Saber",
     "fecha": "2023-01-02"
   },
@@ -905,7 +905,7 @@
     "stock": 69,
     "detalle": "Descripción ficticia del libro 65 con contenido variado.",
     "ranking": 4.6,
-    "portadas": "https://example.com/covers/65.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Libros del Sur",
     "fecha": "2022-06-19"
   },
@@ -919,7 +919,7 @@
     "stock": 20,
     "detalle": "Descripción ficticia del libro 66 con contenido variado.",
     "ranking": 4.6,
-    "portadas": "https://example.com/covers/66.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Libros del Sur",
     "fecha": "2020-03-29"
   },
@@ -933,7 +933,7 @@
     "stock": 18,
     "detalle": "Descripción ficticia del libro 67 con contenido variado.",
     "ranking": 4.7,
-    "portadas": "https://example.com/covers/67.jpg",
+    "portadas": "https://i.pinimg.com/originals/ed/bb/37/edbb37a4bdb1ed108fff5a234f2a1ac6.png",
     "editoriales": "NovaPrint",
     "fecha": "2021-01-12"
   },
@@ -947,7 +947,7 @@
     "stock": 72,
     "detalle": "Descripción ficticia del libro 68 con contenido variado.",
     "ranking": 4.9,
-    "portadas": "https://example.com/covers/68.jpg",
+    "portadas": "https://i.pinimg.com/736x/bd/e4/80/bde48081a57bbf31f3093deed4578a70.jpg",
     "editoriales": "NovaPrint",
     "fecha": "2023-01-13"
   },
@@ -961,7 +961,7 @@
     "stock": 24,
     "detalle": "Descripción ficticia del libro 69 con contenido variado.",
     "ranking": 4.9,
-    "portadas": "https://example.com/covers/69.jpg",
+    "portadas": "https://i.pinimg.com/736x/a1/74/2b/a1742ba1359004a7758cf18e2e786497.jpg",
     "editoriales": "Libros del Sur",
     "fecha": "2018-05-31"
   },
@@ -975,7 +975,7 @@
     "stock": 45,
     "detalle": "Descripción ficticia del libro 70 con contenido variado.",
     "ranking": 4.7,
-    "portadas": "https://example.com/covers/70.jpg",
+    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png",
     "editoriales": "Libros del Sur",
     "fecha": "2016-01-09"
   }

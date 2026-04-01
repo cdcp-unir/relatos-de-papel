@@ -1,9 +1,13 @@
 import React from 'react';
+import { useParams } from "react-router-dom";
 import Label from '../../../shared/components/Label';
 
-function DetalleLibroPage() {
+function BookDetail() {
+    const { bookId } = useParams()
+    console.log(bookId);
     return (
         <>
+            <p>{bookId}</p>
             <Label texto="THE ADVENTURES OF SUPER DIAPER BABY: COLOR EDITION" />
             <div style={{
                 height: "500px",
@@ -20,4 +24,4 @@ function DetalleLibroPage() {
     );
 }
 
-export default DetalleLibroPage;
+export default BookDetail;
