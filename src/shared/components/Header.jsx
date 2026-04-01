@@ -1,7 +1,8 @@
-import { Link } from 'react-router';
-import logo from '../../assets/img/logo.svg';
-import { PATHS } from '../../app/router/paths';
-import spanish from '../../assets/svg/spanish.svg';
+import { Link } from "react-router";
+import logo from "../../assets/img/logo.png";
+import { PATHS } from "../../app/router/paths";
+import spanish from "../../assets/svg/spanish.svg";
+import { Button } from "./Button";
 
 const LanguageSelector = () => (
   <section className="text-md text-white cursor-pointer select-none">
@@ -13,24 +14,54 @@ const LanguageSelector = () => (
 );
 
 export const Header = () => (
-  <div className="navbar bg-color-info-content-100 shadow-sm">
-  <div className="flex-1">
-    <Link className="btn btn-info-content text-xl"> <img src={logo} alt="logo" className="w-12 h-12 text-blue-700 dark:text-white"/>Relatos de papel</Link>
+  <div className="navbar bg-primary shadow-sm text-primary-content">
+    <div className="flex-1">
+      <Link className="btn btn-primary">
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="size-[2em]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            {" "}
+            <path
+              opacity="0.5"
+              d="M4.72718 2.73332C5.03258 2.42535 5.46135 2.22456 6.27103 2.11478C7.10452 2.00177 8.2092 2 9.7931 2H14.2069C15.7908 2 16.8955 2.00177 17.729 2.11478C18.5387 2.22456 18.9674 2.42535 19.2728 2.73332C19.5782 3.0413 19.7773 3.47368 19.8862 4.2902C19.9982 5.13073 20 6.24474 20 7.84202L20 18H7.42598C6.34236 18 5.96352 18.0057 5.67321 18.0681C5.15982 18.1785 4.71351 18.4151 4.38811 18.7347C4.27837 18.8425 4.22351 18.8964 4.09696 19.2397C4.02435 19.4367 4 19.5687 4 19.7003V7.84202C4 6.24474 4.00176 5.13073 4.11382 4.2902C4.22268 3.47368 4.42179 3.0413 4.72718 2.73332Z"
+              fill="#1C274D"
+            ></path>{" "}
+            <path
+              d="M20 18H7.42598C6.34236 18 5.96352 18.0057 5.67321 18.0681C5.15982 18.1785 4.71351 18.4151 4.38811 18.7347C4.27837 18.8425 4.22351 18.8964 4.09696 19.2397C3.97041 19.5831 3.99045 19.7288 4.03053 20.02C4.03761 20.0714 4.04522 20.1216 4.05343 20.1706C4.16271 20.8228 4.36259 21.1682 4.66916 21.4142C4.97573 21.6602 5.40616 21.8206 6.21896 21.9083C7.05566 21.9986 8.1646 22 9.75461 22H14.1854C15.7754 22 16.8844 21.9986 17.7211 21.9083C18.5339 21.8206 18.9643 21.6602 19.2709 21.4142C19.4705 21.254 19.6249 21.0517 19.7385 20.75H8C7.58579 20.75 7.25 20.4142 7.25 20C7.25 19.5858 7.58579 19.25 8 19.25H19.9754C19.9926 18.8868 19.9982 18.4741 20 18Z"
+              fill="#1C274D"
+            ></path>{" "}
+            <path
+              d="M7.25 7C7.25 6.58579 7.58579 6.25 8 6.25H16C16.4142 6.25 16.75 6.58579 16.75 7C16.75 7.41421 16.4142 7.75 16 7.75H8C7.58579 7.75 7.25 7.41421 7.25 7Z"
+              fill="#1C274D"
+            ></path>{" "}
+            <path
+              d="M8 9.75C7.58579 9.75 7.25 10.0858 7.25 10.5C7.25 10.9142 7.58579 11.25 8 11.25H13C13.4142 11.25 13.75 10.9142 13.75 10.5C13.75 10.0858 13.4142 9.75 13 9.75H8Z"
+              fill="#1C274D"
+            ></path>{" "}
+          </g>
+        </svg>
+        Relatos de papel
+      </Link>
+    </div>
+    <div className="flex-none">
+      <ul className="menu menu-horizontal px-1">
+        <LanguageSelector />
+        
+      </ul>
+    </div>
+    <div className="navbar-end">
+      <Button className="btn-primary w-fit" onClick={() => navigate(PATHS.HOME)}>Iniciar Sesión</Button>
+    </div>
   </div>
-  <div className="flex-none">
-    <ul className="menu menu-horizontal px-1">
-      <LanguageSelector />
-      <li><a>Link</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="bg-base-100 rounded-t-none p-2">
-            <li><a>Link 1</a></li>
-            <li><a>Link 2</a></li>
-          </ul>
-        </details>
-      </li>
-    </ul>
-  </div>
-</div>
 );

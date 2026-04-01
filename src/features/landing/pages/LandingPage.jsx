@@ -3,6 +3,7 @@ import bookshelf from '../../../assets/img/bookshelf.png';
 import { Button } from '../../../shared/components/Button';
 import { Header } from '../../../shared/components/Header';
 import { PATHS } from '../../../app/router/paths';
+import Footer from '../../../shared/components/Footer';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export default function LandingPage() {
     <div className="min-h-screen w-full flex flex-col text-white">
       <Header />
 
-      <main className="flex flex-row items-center justify-center gap-12 flex-1">
+      <main className="flex flex-row items-center justify-center gap-12 flex-1 text-base-content">
         <section className="flex flex-col gap-6">
           <h1 className="text-4xl">Disfruta el mundo de los libros</h1>
           <p className="text-lg">
@@ -23,6 +24,7 @@ export default function LandingPage() {
           <img src={bookshelf} alt="Librero con libros" className="w-full h-auto object-contain" />
         </section>
       </main>
+      <Footer/>
     </div>
   );
 }
