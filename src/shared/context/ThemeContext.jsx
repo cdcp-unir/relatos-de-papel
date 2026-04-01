@@ -2,8 +2,8 @@ import { createContext, useEffect, useMemo, useState } from "react";
 
 export const ThemeContext = createContext(null);
 
-const LIGHT_THEME = "nord";
-const DARK_THEME = "dracula";
+const LIGHT_THEME = "corporate";
+const DARK_THEME = "business";
 
 export function ThemeProvider({ children }) {
   const getInitialTheme = () => {

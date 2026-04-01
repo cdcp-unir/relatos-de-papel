@@ -1,3 +1,5 @@
+import ThemeToggle from "./ThemeToggle";
+
 const Footer = () => {
     return (
         <>
@@ -47,6 +49,7 @@ const Footer = () => {
                         </a>
                     </div>
                 </nav>
+                <ThemeToggle/>
             </footer>
         </>
     )
