@@ -1,42 +1,43 @@
-import books from "./../../../mocks/books.json"
+import books from "./../../../mocks/books.json";
 
 const Profile = () => {
-    return (
-        <>
-            <div className="flex flex-col gap-2 p-3">
-                <div>
-                    <div className="stats shadow">
-                        <div className="stat">
-                            <div className="stat-figure text-secondary">
-                                <div className="avatar avatar-online avatar-placeholder">
-                                    <div className="bg-neutral text-neutral-content w-16 rounded-full">
-                                        <span className="text-xl">CC</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="stat-value">Cristian Chiguano</div>
-                            <div className="stat-title">cristiandavid.9298@comunidadunir.net</div>
-                            <div className="stat-desc text-primary">Miembro desde 12 de marzo de 2024</div>
-                        </div>
-                    </div>
-                </div>
-
-                <ul className="list bg-base-100 rounded-box shadow-md">
-
-                    <li className="p-4 pb-2 opacity-60 tracking-wide text-3xl">Tus pedidos más recientes</li>
-                    {books.slice(0, 5).map((book) => (
-                        <li className="list-row">                            
-                            <div>
-                                <div className="text-xl">{book.titulo}</div>
-                                <div className="text-xs uppercase font-semibold opacity-60">{book.autor}</div>
-                                <div className="text-xs uppercase font-semibold opacity-60">{book.precio}</div>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+  return (
+    <div className="flex flex-col gap-6 p-6 max-w-5xl mx-auto">          
+      <div className="stats shadow bg-base-100">
+        <div className="stat">
+          <div className="stat-figure text-secondary">
+            <div className="avatar avatar-online">
+              <div className="w-16 rounded-full bg-neutral text-neutral-content flex items-center justify-center">
+                <span className="text-xl font-bold">CC</span>
+              </div>
             </div>
-        </>
-    );
-}
+          </div>
+          <div className="stat-value text-lg font-bold">Cristian Chiguano</div>
+          <div className="stat-title text-sm opacity-70">
+            cristiandavid.9298@comunidadunir.net
+          </div>
+          <div className="stat-desc text-primary text-xs">
+            Miembro desde 12 de marzo de 2024
+          </div>
+        </div>
+      </div>      
+      <div className="card bg-base-100 shadow-md">
+        <div className="card-body">
+          <h2 className="card-title text-lg">Tus pedidos más recientes</h2>
+          <ul className="divide-y divide-base-200">
+            {books.slice(0, 5).map((book, index) => (
+              <li key={index} className="py-3 flex justify-between items-center">
+                <div>
+                  <p className="font-semibold">{book.titulo}</p>
+                  <p className="text-xs uppercase opacity-70">{book.autor}</p>
+                </div>                
+              </li>
+            ))}
+          </ul>          
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Profile;
