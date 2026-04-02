@@ -23,7 +23,7 @@ const CartItem = ({ item, onRemove, mostrarBoton = true }) =>
             {mostrarBoton && (
                 <button
                     onClick={() => onRemove(item.id)}
-                    className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition w-full sm:w-auto"
+                    className="bg-green-700 text-white px-3 py-1 rounded hover:bg-green-900 transition w-full sm:w-auto"
                 >
                     Quitar
                 </button>
