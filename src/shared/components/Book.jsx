@@ -5,7 +5,7 @@ function Book({ rutaImagen, titulo, detalle }) {
     const navigate = useNavigate();
     return (
         <div class="w-full max-w-xl bg-white border rounded-lg shadow p-4 flex gap-4 mb-8">
-            <div class="w-32 h-40 flex-shrink-0">
+            <div class="w-32 h-40 shrink-0">
                 <img
                     src={rutaImagen}
                     alt="portada"
