@@ -1,13 +1,11 @@
 import Book from '../../../shared/components/Book';
-import SearchBar from '../../../shared/components/SearchBar';
-import { Header } from '../../../shared/components/Header';
-import Label from '../../../shared/components/Label';
 import Books from '../../../mocks/books.json'
+import Label from '../../../shared/components/Label';
+import SearchBar from '../../../shared/components/SearchBar';
 
 function HomePage() {
   return (
-    <>
-      <Header />
+    <>      
       <SearchBar />
       <Label texto="Libros Destacados" />
       <div style={{

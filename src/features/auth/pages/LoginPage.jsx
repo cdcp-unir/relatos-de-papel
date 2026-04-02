@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { InputPassword, InputText } from '../../../shared/components/InputText';
+
 import { Button } from '../../../shared/components/Button';
 import { Header } from '../../../shared/components/Header';
-import { InputText, InputPassword } from '../../../shared/components/InputText';
 import { login } from './LoginService';
+import { useNavigate } from 'react-router';
+import { useState } from 'react';
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -36,31 +37,61 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen w-full text-white flex flex-col items-center">
+    <div className="min-h-screen flex flex-col bg-base-200">
+      {/* Header */}
       <Header />
 
-      <section className="flex flex-col items-center justify-center h-[calc(100vh-80px)] min-w-[300px]">
-        <h3 className="my-8 mx-auto text-2xl">Iniciar sesión</h3>
-        <form className="flex flex-col items-center justify-center w-full gap-4" onSubmit={handleSubmit}>
-          <InputText
-            label="Nombre de usuario"
-            id="username"
-            name="username"
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-          />
-          <InputPassword
-            label="Contraseña"
-            id="password"
-            name="password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
+      {/* Contenedor principal */}
+      <section className="flex flex-col items-center justify-center flex-grow px-4">
+        <div className="card w-full max-w-md bg-base-100 shadow-xl">
+          <div className="card-body">
+            <h3 className="text-2xl font-bold text-center mb-6">Iniciar sesión</h3>
 
-          <Button className="w-full mt-8 btn-primary" type="submit" isLoading={isLoading}>Iniciar sesión</Button>
+            <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+              <InputText
+                label="Nombre de usuario"
+                id="username"
+                name="username"
+                value={username}
+                onChange={e => setUsername(e.target.value)}
+              />
+              <InputPassword
+                label="Contraseña"
+                id="password"
+                name="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+              />
 
-          {error && <p className="text-red-500 text-xl mt-4">{error}</p>}
-        </form>
+              <Button
+                className="w-full mt-4 btn-primary"
+                type="submit"
+                isLoading={isLoading}
+              >
+                Iniciar sesión
+              </Button>
+
+              {error && (
+                <p className="text-error text-sm mt-2 text-center">{error}</p>
+              )}
+            </form>
+
+            {/* Extras */}
+            <div className="mt-6 text-center text-sm opacity-70">
+              <p>
+                ¿No tienes cuenta?{" "}
+                <a href="/register" className="link link-primary">
+                  Regístrate aquí
+                </a>
+              </p>
+              <p className="mt-2">
+                <a href="/forgot-password" className="link link-secondary">
+                  ¿Olvidaste tu contraseña?
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

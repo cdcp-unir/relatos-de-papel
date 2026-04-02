@@ -1,31 +1,20 @@
-import { NavLink, Outlet } from "react-router-dom";
-
 import Footer from "../../shared/components/Footer";
 import Navbar from "../../shared/components/Navbar";
-import { PATHS } from "../router/paths";
-import ThemeToggle from "../../shared/components/ThemeToggle";
-
-const linkStyle = ({ isActive }) => ({
-  padding: "0.75rem 1rem",
-  borderRadius: "8px",
-  textDecoration: "none",
-  color: isActive ? "#111827" : "#4b5563",
-  background: isActive ? "#f3f4f6" : "transparent",
-  fontWeight: isActive ? 600 : 400,
-});
+import { Outlet } from "react-router-dom";
 
 export default function PrivateLayout() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen bg-base-200">
+      {/* Header */}
       <Navbar />
 
-      <div className="grid p-3">
-        <main className="p-2 w-full">
-          <Outlet />
-        </main>
-      </div>
+      {/* Contenido principal */}
+      <main className="grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6">
+        <Outlet />
+      </main>
 
+      {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 }
