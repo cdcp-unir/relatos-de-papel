@@ -1,30 +1,34 @@
-import { useNavigate } from 'react-router';
-import bookshelf from '../../../assets/img/bookshelf.png';
 import { Button } from '../../../shared/components/Button';
+import Footer from '../../../shared/components/Footer';
 import { Header } from '../../../shared/components/Header';
 import { PATHS } from '../../../app/router/paths';
-import Footer from '../../../shared/components/Footer';
+import bookshelf from '../../../assets/img/bookshelf.png';
+import { useNavigate } from 'react-router';
 
 export default function LandingPage() {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen w-full flex flex-col text-white">
+    <div className="min-h-screen w-full flex flex-col">
       <Header />
 
-      <main className="flex flex-row items-center justify-center gap-12 flex-1 text-base-content">
-        <section className="flex flex-col gap-6">
-          <h1 className="text-4xl">Disfruta el mundo de los libros</h1>
-          <p className="text-lg">
+      <main className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12 py-12 px-6 text-base-content">        
+        <section className="flex flex-col gap-6 max-w-lg">
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Disfruta el mundo de los libros
+          </h1>
+          <p className="text-lg md:text-xl">
             Explora nuestra colección y encuentra tu próxima gran lectura.
           </p>
-          <Button className="btn-primary w-fit" onClick={() => navigate(PATHS.HOME)}>Explorar ahora</Button>
-        </section>
-
-        <section className="flex justify-end">
-          <img src={bookshelf} alt="Librero con libros" className="w-full h-auto object-contain" />
+          <Button className="btn btn-primary w-fit" onClick={() => navigate(PATHS.HOME)}>
+            Explorar ahora
+          </Button>
+        </section>        
+        <section className="flex justify-center md:justify-end w-full md:w-1/2">
+          <img src={bookshelf} alt="Librero con libros" className="w-full max-w-md h-auto object-contain drop-shadow-lg" />
         </section>
       </main>
-      <Footer/>
+
+      <Footer />
     </div>
   );
 }

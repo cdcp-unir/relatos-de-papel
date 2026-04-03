@@ -1,6 +1,7 @@
 import { InputPassword, InputText } from '../../../shared/components/InputText';
 
 import { Button } from '../../../shared/components/Button';
+import Footer from '../../../shared/components/Footer';
 import { Header } from '../../../shared/components/Header';
 import { login } from '../services/LoginService';
 import { useNavigate } from 'react-router';
@@ -38,36 +39,19 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-base-200">
-      {/* Header */}
+      
       <Header />
 
-      {/* Contenedor principal */}
-      <section className="flex flex-col items-center justify-center flex-grow px-4">
+      <section className="flex flex-col items-center justify-center grow px-4">
         <div className="card w-full max-w-md bg-base-100 shadow-xl">
           <div className="card-body">
             <h3 className="text-2xl font-bold text-center mb-6">Iniciar sesión</h3>
 
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-              <InputText
-                label="Nombre de usuario"
-                id="username"
-                name="username"
-                value={username}
-                onChange={e => setUsername(e.target.value)}
-              />
-              <InputPassword
-                label="Contraseña"
-                id="password"
-                name="password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-              />
+              <InputText label="Nombre de usuario" id="username" name="username" value={username} onChange={e => setUsername(e.target.value)} />
+              <InputPassword label="Contraseña" id="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
 
-              <Button
-                className="w-full mt-4 btn-primary"
-                type="submit"
-                isLoading={isLoading}
-              >
+              <Button className="w-full mt-4 btn-primary" type="submit" isLoading={isLoading}>
                 Iniciar sesión
               </Button>
 
@@ -75,8 +59,7 @@ export default function LoginPage() {
                 <p className="text-error text-sm mt-2 text-center">{error}</p>
               )}
             </form>
-
-            {/* Extras */}
+            
             <div className="mt-6 text-center text-sm opacity-70">
               <p>
                 ¿No tienes cuenta?{" "}
@@ -93,6 +76,8 @@ export default function LoginPage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
