@@ -14,8 +14,12 @@ const LanguageSelector = () => (
       tabIndex={0}
       className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40"
     >
-      <li><a>Español</a></li>
-      <li><a>English</a></li>
+      <li>
+        <a>Español</a>
+      </li>
+      <li>
+        <a>English</a>
+      </li>
     </ul>
   </div>
 );
@@ -27,9 +31,13 @@ export const Header = () => {
     <div className="sticky top-0 z-50 bg-base-100 border-b border-base-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link className="flex items-center gap-2 cursor-pointer">
+          <Link
+            className="flex items-center gap-2 cursor-pointer"
+            to={PATHS.LANDING}
+          >
             <span className="text-xl font-bold tracking-tight">
-              Relatos <span className="text-primary">de Papel</span>
+              <span className="text-base-content">Relatos  </span>
+              <span className="text-primary">de Papel</span>
             </span>
           </Link>
           <div className="flex-none flex items-center gap-4">
