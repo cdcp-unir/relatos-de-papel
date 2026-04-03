@@ -1,29 +1,40 @@
-import React from 'react';
 import { useNavigate } from 'react-router';
 
-function Book({ rutaImagen, titulo, detalle }) {
+function Book({ rutaImagen, titulo, detalle, categoria, autor, precio }) {
     const navigate = useNavigate();
     return (
-        <div class="w-full max-w-xl bg-white border rounded-lg shadow p-4 flex gap-4 mb-8">
-            <div class="w-32 h-40 shrink-0">
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 flex flex-col group w-64">            
+            <figure className="aspect-square relative overflow-hidden rounded-lg mb-4 bg-gray-100 flex items-center justify-center">
                 <img
                     src={rutaImagen}
-                    alt="portada"
-                    class="w-full h-full object-cover rounded-md"
+                    alt={`Portada del libro ${titulo}`}
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                 />
-            </div>
-            <div class="flex flex-col flex-1">
-                <h2 class="text-lg font-bold text-gray-900 mb-1">
-                    {titulo}
-                </h2>
-                <p class="text-gray-700 text-sm line-clamp-3">
-                    {detalle}
-                </p>
-                <button onClick={() => navigate(`/books/${detalle}`)} class="mt-2 w-28 text-center py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition">
-                    Ver más
-                </button>
+            </figure>            
+            <div className="card-body p-0 flex flex-col justify-between flex-1">
+                <div className="space-y-1">
+                    <h2 className="card-title text-lg font-semibold line-clamp-1">{titulo}</h2>
+                    <p className="text-sm text-gray-600 line-clamp-1">Categoría: {categoria}</p>
+                    <p className="text-sm text-gray-600 line-clamp-1">Autor: {autor}</p>
+                    <p className="text-base font-bold text-primary">${precio}</p>
+                </div>                
+                <div className="card-actions justify-between mt-4">
+                    <button
+                        onClick={() => navigate(`/books/${detalle}`)}
+                        className="btn btn-secondary"
+                    >
+                        Ver más
+                    </button>
+                    <button                        
+                        className="btn btn-primary"
+                    >
+                        Añadir
+                    </button>
+                </div>
             </div>
         </div>
+
+
     );
 }
 
