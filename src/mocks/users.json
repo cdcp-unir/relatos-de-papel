@@ -3,12 +3,21 @@
         "id": 1,
         "username": "will117",
         "password": "password123",
+        "email": "will117@gmail.com",
         "role": "admin"
     },
     {
         "id": 2,
         "username": "michael784",
         "password": "password234",
+        "email": "michael784@gmail.com",
         "role": "user"
+    },
+    {
+        "id": 3,
+        "username": "ssamaeljs",
+        "password": "ssamaeljs",
+        "email": "ssamael.dev@unir.net",
+        "role": "admin"
     }
 ]

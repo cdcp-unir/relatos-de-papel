@@ -2,7 +2,7 @@ import { InputPassword, InputText } from '../../../shared/components/InputText';
 
 import { Button } from '../../../shared/components/Button';
 import { Header } from '../../../shared/components/Header';
-import { login } from './LoginService';
+import { login } from '../services/LoginService';
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
 
