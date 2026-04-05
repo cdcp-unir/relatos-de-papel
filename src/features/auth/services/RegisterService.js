@@ -3,15 +3,15 @@ function validateUserExists(users, email, username) {
   const usernameExists = users.some((user) => user.username === username);
 
   if (emailExists && usernameExists) {
-    throw new Error("El correo y el nombre de usuario ya están en uso.");
+    throw new Error("EMAIL_AND_USERNAME_EXISTS");
   }
 
   if (emailExists) {
-    throw new Error("El correo ya está registrado.");
+    throw new Error("EMAIL_EXISTS");
   }
 
   if (usernameExists) {
-    throw new Error("El nombre de usuario ya está en uso.");
+    throw new Error("USERNAME_EXISTS");
   }
 
   return false;

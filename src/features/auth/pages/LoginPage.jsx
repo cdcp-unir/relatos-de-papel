@@ -1,17 +1,19 @@
-import { InputPassword, InputText } from "../../../shared/components/InputText";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
+import { InputPassword, InputText } from "../../../shared/components/InputText";
 import { Button } from "../../../shared/components/Button";
 import Footer from "../../../shared/components/Footer";
 import { Header } from "../../../shared/components/Header";
 import { login } from "../services/LoginService";
-import { Link, useNavigate } from "react-router";
-import { useState } from "react";
 import { PATHS } from "../../../app/router/paths";
 
 export default function LoginPage() {
   const navigate = useNavigate();
+  const { t } = useTranslation("auth");
 
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,18 +22,18 @@ export default function LoginPage() {
     e.preventDefault();
     setError(null);
 
-    if (!username || !password) {
-      alert("Por favor, ingresa tu nombre de usuario y contraseña.");
+    if (!email || !password) {
+      alert(t("login.validation.requiredFields"));
       return;
     }
 
     try {
       setIsLoading(true);
-      await login(username, password);
-      navigate("/home");
+      await login(email, password);
+      navigate(PATHS.HOME);
     } catch (error) {
-      console.error("Error logging in:", error.message);
-      setError(error.message);
+      const errorKey = error.message;
+      setError(t(`errors.${errorKey}`));
     } finally {
       setIsLoading(false);
     }
@@ -45,23 +47,25 @@ export default function LoginPage() {
         <div className="card w-full max-w-md bg-base-100 shadow-xl">
           <div className="card-body">
             <h3 className="text-2xl font-bold text-center mb-6">
-              Iniciar sesión
+              {t("login.title")}
             </h3>
 
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <InputText
-                label="Nombre de usuario"
-                id="username"
-                name="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                label={t("login.email")}
+                id="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
+
               <InputPassword
-                label="Contraseña"
+                label={t("login.password")}
                 id="password"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                checkboxLabel={t("login.checkboxLabel")}
               />
 
               <Button
@@ -69,7 +73,7 @@ export default function LoginPage() {
                 type="submit"
                 isLoading={isLoading}
               >
-                Iniciar sesión
+                {t("login.submit")}
               </Button>
 
               {error && (
@@ -79,15 +83,19 @@ export default function LoginPage() {
 
             <div className="mt-6 text-center text-sm opacity-70">
               <p>
-                ¿No tienes cuenta?{" "}
-                <Link to={PATHS.REGISTER}  className="link link-primary">
-                  Regístrate aquí
+                {t("login.noAccount")}{" "}
+                <Link to={PATHS.REGISTER} className="link link-primary">
+                  {t("login.registerHere")}
                 </Link>
               </p>
+
               <p className="mt-2">
-                <a href="/forgot-password" className="link link-secondary">
-                  ¿Olvidaste tu contraseña?
-                </a>
+                <Link
+                  to={PATHS.FORGOT_PASSWORD}
+                  className="link link-secondary"
+                >
+                  {t("login.forgotPassword")}
+                </Link>
               </p>
             </div>
           </div>

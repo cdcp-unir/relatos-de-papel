@@ -1,18 +1,22 @@
-import { InputPassword, InputText } from '../../../shared/components/InputText';
-import { Button } from '../../../shared/components/Button';
-import { Header } from '../../../shared/components/Header';
-import { register } from '../services/RegisterService';
-import { useNavigate } from 'react-router';
-import { useMemo, useState } from 'react';
-import usersMock from '../../../mocks/users.json';
+import { useMemo, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+import { InputPassword, InputText } from "../../../shared/components/InputText";
+import { Button } from "../../../shared/components/Button";
+import { Header } from "../../../shared/components/Header";
+import { register } from "../services/RegisterService";
+import { PATHS } from "../../../app/router/paths";
+import usersMock from "../../../mocks/users.json";
 
 export default function RegisterPage() {
   const navigate = useNavigate();
+  const { t } = useTranslation("auth");
 
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -32,14 +36,12 @@ export default function RegisterPage() {
   const passwordsMatch = password === repeatPassword && repeatPassword.length > 0;
 
   const emailExists = useMemo(() => {
-    return usersMock.some(
-      user => user.email.toLowerCase() === normalizedEmail
-    );
+    return usersMock.some((user) => user.email.toLowerCase() === normalizedEmail);
   }, [normalizedEmail]);
 
   const usernameExists = useMemo(() => {
     return usersMock.some(
-      user => user.username.toLowerCase() === normalizedUsername
+      (user) => user.username.toLowerCase() === normalizedUsername
     );
   }, [normalizedUsername]);
 
@@ -51,7 +53,7 @@ export default function RegisterPage() {
 
   const isUsernameValid =
     usernameTouched &&
-    username.length > 0 &&
+    username.trim().length > 0 &&
     usernameHasMinLength &&
     !usernameExists;
 
@@ -66,62 +68,60 @@ export default function RegisterPage() {
     passwordsMatch;
 
   const getEmailErrorMessage = () => {
-    if (!emailTouched || !email) return '';
-    if (!emailHasFormat) return 'Ingresa un correo válido.';
-    if (emailExists) return 'Este correo ya está registrado.';
-    return '';
+    if (!emailTouched || !email) return "";
+    if (!emailHasFormat) return t("register.validation.invalidEmail");
+    if (emailExists) return t("errors.EMAIL_EXISTS");
+    return "";
   };
 
   const getUsernameErrorMessage = () => {
-    if (!usernameTouched || !username) return '';
-    if (!usernameHasMinLength) {
-      return 'El nombre de usuario debe tener al menos 3 caracteres.';
-    }
-    if (usernameExists) return 'Este nombre de usuario ya está en uso.';
-    return '';
+    if (!usernameTouched || !username) return "";
+    if (!usernameHasMinLength) return t("register.validation.usernameMinLength");
+    if (usernameExists) return t("errors.USERNAME_EXISTS");
+    return "";
   };
 
   const getPasswordErrorMessage = () => {
-    if (!passwordTouched || !password) return '';
+    if (!passwordTouched || !password) return "";
     if (!passwordHasMinLength) {
-      return 'La contraseña debe tener al menos 8 caracteres.';
+      return t("register.validation.passwordMinLength");
     }
-    return '';
+    return "";
   };
 
   const getRepeatPasswordErrorMessage = () => {
-    if (!repeatPasswordTouched || !repeatPassword) return '';
-    if (!passwordsMatch) return 'Las contraseñas no coinciden.';
-    return '';
+    if (!repeatPasswordTouched || !repeatPassword) return "";
+    if (!passwordsMatch) return t("register.validation.passwordsDoNotMatch");
+    return "";
   };
 
   const validateForm = () => {
     if (!email || !username || !password || !repeatPassword) {
-      return 'Por favor, completa todos los campos.';
+      return t("register.validation.allFieldsRequired");
     }
 
     if (!emailHasFormat) {
-      return 'Ingresa un correo válido.';
+      return t("register.validation.invalidEmail");
     }
 
     if (emailExists) {
-      return 'Este correo ya está registrado.';
+      return t("errors.EMAIL_EXISTS");
     }
 
     if (!usernameHasMinLength) {
-      return 'El nombre de usuario debe tener al menos 3 caracteres.';
+      return t("register.validation.usernameMinLength");
     }
 
     if (usernameExists) {
-      return 'Este nombre de usuario ya está en uso.';
+      return t("errors.USERNAME_EXISTS");
     }
 
     if (!passwordHasMinLength) {
-      return 'La contraseña debe tener al menos 8 caracteres.';
+      return t("register.validation.passwordMinLength");
     }
 
     if (!passwordsMatch) {
-      return 'Las contraseñas no coinciden.';
+      return t("register.validation.passwordsDoNotMatch");
     }
 
     return null;
@@ -151,21 +151,17 @@ export default function RegisterPage() {
         password,
       });
 
-      navigate('/home');
+      navigate(PATHS.HOME);
     } catch (error) {
-      console.error('Error registering:', error.message);
-      setError(error.message || 'Ocurrió un error al crear la cuenta.');
+      console.error("Error registering:", error.message);
+      setError(
+        t(`errors.${error.message}`, {
+          defaultValue: t("register.errors.generic"),
+        })
+      );
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleGoogleRegister = () => {
-    console.log('Registro con Google');
-  };
-
-  const handleFacebookRegister = () => {
-    console.log('Registro con Facebook');
   };
 
   return (
@@ -175,11 +171,13 @@ export default function RegisterPage() {
       <section className="flex flex-col items-center justify-center flex-grow px-4">
         <div className="card w-full max-w-md bg-base-100 shadow-xl">
           <div className="card-body">
-            <h3 className="text-2xl font-bold text-center mb-6">Crea una cuenta</h3>
+            <h3 className="text-2xl font-bold text-center mb-6">
+              {t("register.title")}
+            </h3>
 
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <InputText
-                label="Correo electrónico"
+                label={t("register.email")}
                 id="email"
                 name="email"
                 value={email}
@@ -188,26 +186,12 @@ export default function RegisterPage() {
                 error={emailTouched && !!getEmailErrorMessage()}
                 success={isEmailValid}
                 errorMessage={getEmailErrorMessage()}
-                successMessage={isEmailValid ? 'Correo disponible.' : ''}
-                placeholder="ejemplo@correo.com"
-              />
-
-              <InputText
-                label="Nombre de usuario"
-                id="username"
-                name="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                onBlur={() => setUsernameTouched(true)}
-                error={usernameTouched && !!getUsernameErrorMessage()}
-                success={isUsernameValid}
-                errorMessage={getUsernameErrorMessage()}
-                successMessage={isUsernameValid ? 'Nombre de usuario disponible.' : ''}
-                placeholder="Tu nombre de usuario"
+                successMessage={isEmailValid ? t("register.success.emailAvailable") : ""}
+                placeholder={t("register.placeholders.email")}
               />
 
               <InputPassword
-                label="Contraseña"
+                label={t("register.password")}
                 id="password"
                 name="password"
                 value={password}
@@ -216,12 +200,13 @@ export default function RegisterPage() {
                 error={passwordTouched && !!getPasswordErrorMessage()}
                 success={isPasswordValid}
                 errorMessage={getPasswordErrorMessage()}
-                successMessage={isPasswordValid ? 'Contraseña válida.' : ''}
-                placeholder="Mínimo 8 caracteres"
+                successMessage={isPasswordValid ? t("register.success.passwordValid") : ""}
+                placeholder={t("register.placeholders.password")}
+                checkboxLabel={t("login.checkboxLabel")}
               />
 
               <InputPassword
-                label="Repetir contraseña"
+                label={t("register.repeatPassword")}
                 id="repeatPassword"
                 name="repeatPassword"
                 value={repeatPassword}
@@ -230,8 +215,11 @@ export default function RegisterPage() {
                 error={repeatPasswordTouched && !!getRepeatPasswordErrorMessage()}
                 success={isRepeatPasswordValid}
                 errorMessage={getRepeatPasswordErrorMessage()}
-                successMessage={isRepeatPasswordValid ? 'Las contraseñas coinciden.' : ''}
-                placeholder="Repite tu contraseña"
+                successMessage={
+                  isRepeatPasswordValid ? t("register.success.passwordsMatch") : ""
+                }
+                placeholder={t("register.placeholders.repeatPassword")}
+                checkboxLabel={t("login.checkboxLabel")}
               />
 
               <Button
@@ -239,7 +227,7 @@ export default function RegisterPage() {
                 type="submit"
                 isLoading={isLoading}
               >
-                Crear cuenta
+                {t("register.submit")}
               </Button>
 
               {error && (
@@ -247,32 +235,12 @@ export default function RegisterPage() {
               )}
             </form>
 
-            <div className="divider">o continúa con</div>
-
-            <div className="flex flex-col gap-3">
-              <Button
-                className="w-full btn-outline"
-                type="button"
-                onClick={handleGoogleRegister}
-              >
-                Continuar con Google
-              </Button>
-
-              <Button
-                className="w-full btn-outline"
-                type="button"
-                onClick={handleFacebookRegister}
-              >
-                Continuar con Facebook
-              </Button>
-            </div>
-
             <div className="mt-6 text-center text-sm opacity-70">
               <p>
-                ¿Ya tienes cuenta?{' '}
-                <a href="/login" className="link link-primary">
-                  Inicia sesión aquí
-                </a>
+                {t("register.alreadyHaveAccount")}{" "}
+                <Link to={PATHS.LOGIN} className="link link-primary">
+                  {t("register.loginHere")}
+                </Link>
               </p>
             </div>
           </div>

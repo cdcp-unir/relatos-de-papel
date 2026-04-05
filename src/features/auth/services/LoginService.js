@@ -1,24 +1,24 @@
 import { setLoginState } from '../../../state/loginState';
 
-export const login = async (username, password) => {
+export const login = async (email, password) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     const usersResponse = await import('../../../mocks/users.json');
-    const user = usersResponse.default.find(u => u.username === username);
+    const user = usersResponse.default.find(u => u.email === email);
 
     if (!user) {
-        throw new Error('Usuario no encontrado');
+        throw new Error('USER_NOT_FOUND');
     }
 
     if (user.password !== password) {
-        throw new Error('Contraseña incorrecta');
+        throw new Error('INVALID_PASSWORD');
     }
 
     setLoginState({
         isAuthenticated: true,
-        username,
+        email,
         userId: user.id,
         role: user.role
     });
 
-    return { username, userId: user.id, role: user.role };
+    return { email, userId: user.id, role: user.role };
 }

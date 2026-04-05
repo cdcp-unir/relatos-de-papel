@@ -1,31 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 
 import { Button } from "./Button";
+import LanguageSelector from "./LanguageSelector";
 import { PATHS } from "../../app/router/paths";
-import spanish from "../../assets/svg/spanish.svg";
-
-const LanguageSelector = () => (
-  <div className="dropdown dropdown-end">
-    <label tabIndex={0} className="btn btn-ghost gap-2">
-      <img src={spanish} alt="Español" className="w-6 h-6" />
-      <span className="hidden sm:inline">Español</span>
-    </label>
-    <ul
-      tabIndex={0}
-      className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40"
-    >
-      <li>
-        <a>Español</a>
-      </li>
-      <li>
-        <a>English</a>
-      </li>
-    </ul>
-  </div>
-);
+import { useTranslation } from "react-i18next";
 
 export const Header = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation("common");
 
   return (
     <div className="sticky top-0 z-50 bg-base-100 border-b border-base-200 shadow-sm">
@@ -36,17 +18,19 @@ export const Header = () => {
             to={PATHS.LANDING}
           >
             <span className="text-xl font-bold tracking-tight">
-              <span className="text-base-content">Relatos  </span>
-              <span className="text-primary">de Papel</span>
+              <span className="text-base-content">{t("brandPart1")}</span>
+              <span className="text-primary">{t("brandPart2")}</span>
             </span>
           </Link>
+
           <div className="flex-none flex items-center gap-4">
             <LanguageSelector />
+
             <Button
               className="btn btn-accent"
               onClick={() => navigate(PATHS.LOGIN)}
             >
-              Iniciar Sesión
+              {t("login")}
             </Button>
           </div>
         </div>
