@@ -2,7 +2,7 @@ import { setLoginState } from '../../../state/loginState';
 
 export const login = async (email, password) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
-    const usersResponse = await import('../../../mocks/users.json');
+    const usersResponse = await import('@mocks/users.json');
     const user = usersResponse.default.find(u => u.email === email);
 
     if (!user) {
@@ -17,7 +17,7 @@ export const login = async (email, password) => {
         isAuthenticated: true,
         email,
         userId: user.id,
-        role: user.role
+        role: user.role,        
     });
 
     return { email, userId: user.id, role: user.role };

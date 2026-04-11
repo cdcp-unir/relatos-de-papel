@@ -1,7 +1,10 @@
 import React from "react";
+import {currencyFormat} from "../hooks/useCurrencyFormat";
 
 const CartItem = ({ item, onRemove, mostrarBoton = true }) =>
 {
+const {formatCurrency} = currencyFormat(); 
+
     return (
         <li className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b pb-3 gap-3">
 
@@ -15,7 +18,7 @@ const CartItem = ({ item, onRemove, mostrarBoton = true }) =>
                     <p className="font-medium">{item.titulo}</p>
                     <p className="text-sm text-gray-600">{item.descripcion}</p>
                     <p className="text-sm font-semibold text-green-700">
-                        ${item.precio.toFixed(2)}
+                        {formatCurrency(item.precio)}
                     </p>
                 </div>
             </div>
@@ -23,7 +26,7 @@ const CartItem = ({ item, onRemove, mostrarBoton = true }) =>
             {mostrarBoton && (
                 <button
                     onClick={() => onRemove(item.id)}
-                    className="bg-green-700 text-white px-3 py-1 rounded hover:bg-green-900 transition w-full sm:w-auto"
+                    className="btn btn-accent px-3 py-1 rounded transition w-full sm:w-auto"
                 >
                     Quitar
                 </button>

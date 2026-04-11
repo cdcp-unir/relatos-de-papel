@@ -4,7 +4,9 @@
         "username": "will117",
         "password": "password123",
         "email": "will117@gmail.com",
-        "role": "admin"
+        "role": "admin",
+        "firstName":"",
+        "lastName":""
     },
     {
         "id": 2,
@@ -18,6 +20,13 @@
         "username": "ssamaeljs",
         "password": "ssamaeljs",
         "email": "ssamael.dev@unir.net",
+        "role": "admin"
+    },
+    {
+        "id": 4,
+        "username": "cdcp",
+        "password": "abc123",
+        "email": "cdcp@unir.net",
         "role": "admin"
     }
 ]
