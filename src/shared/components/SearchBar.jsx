@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import Books from '../../mocks/books.json'
+import { DetailContext } from '../context/DetailContext/DetailsContext';
 
 function SearchBar() {
+    const { setBusqueda, busqueda } = useContext(DetailContext)
+
     return (
         <div className='w-2/3 mx-auto'>
-            <input className='w-full border border-gray-300 rounded-lg px-4 py-2' type="text" placeholder="Buscar..." />
+            <label className="input w-full">
+                <input type="text" placeholder="Buscar..." value={busqueda} onChange={(e) => setBusqueda(e.target.value)} />
+                <span className='label' >Buscar</span>
+            </label>
         </div>
     );
 }
