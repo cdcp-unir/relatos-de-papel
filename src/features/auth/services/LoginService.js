@@ -17,10 +17,8 @@ export const login = async (email, password) => {
         isAuthenticated: true,
         email,
         userId: user.id,
-        role: user.role,
-        firstName,
-        lastName
+        role: user.role,        
     });
 
-    return { email, userId: user.id, role: user.role, firstName, lastName };
+    return { email, userId: user.id, role: user.role };
 }

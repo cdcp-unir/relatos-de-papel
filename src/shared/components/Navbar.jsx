@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { PATHS } from "./../../app/router/paths";
-import { avatar } from "../../../shared/hooks/avatar";
-import { currencyFormat } from "../../shared/hooks/avatar";
+import { avatar } from "../hooks/avatar";
+import { currencyFormat } from "../hooks/useCurrencyFormat";
 
 const Navbar = () => {
 

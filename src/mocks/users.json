@@ -13,26 +13,20 @@
         "username": "michael784",
         "password": "password234",
         "email": "michael784@gmail.com",
-        "role": "user",
-        "firstName":"",
-        "lastName":""
+        "role": "user"
     },
     {
         "id": 3,
         "username": "ssamaeljs",
         "password": "ssamaeljs",
         "email": "ssamael.dev@unir.net",
-        "role": "admin",
-        "firstName":"",
-        "lastName":""
+        "role": "admin"
     },
     {
         "id": 4,
         "username": "cdcp",
         "password": "abc123",
         "email": "cdcp@unir.net",
-        "role": "admin",
-        "firstName":"Cristian",
-        "lastName":"Chiguano"
+        "role": "admin"
     }
 ]
