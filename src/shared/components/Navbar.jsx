@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import { PATHS } from "./../../app/router/paths";
+import { avatar } from "../../../shared/hooks/avatar";
+import { currencyFormat } from "../../shared/hooks/avatar";
 
 const Navbar = () => {
+
+    const { formatCurrency } = currencyFormat();
+    const { initials } = avatar("Cristian", "Chiguano");
+
     return (
         <div className="sticky top-0 z-50 bg-base-100 border-b border-base-200 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,17 +36,17 @@ const Navbar = () => {
                             <div tabIndex={0} className="card card-compact dropdown-content bg-base-100 mt-3 w-56 shadow-lg">
                                 <div className="card-body">
                                     <span className="text-sm font-semibold">8 Items</span>
-                                    <span className="text-xs opacity-70">Subtotal: $999</span>
+                                    <span className="text-xs opacity-70">Subtotal: {formatCurrency(999)}</span>
                                     <div className="card-actions mt-2">
                                         <Link to={PATHS.CART} className="btn btn-primary btn-sm w-full">Ver carrito</Link>
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-8 rounded-full bg-primary text-white flex items-center justify-center">
-                                    <span className="text-xs font-bold">CC</span>
+                                    <span className="text-xs font-bold">{initials}</span>
                                 </div>
                             </div>
                             <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow-lg">

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import books from "../../../mocks/cartbooks.json";
-import CartItem from "../../../shared/components/CartItem"
 
-const CheckoutPage = () =>
-{
+import CartItem from "../../../shared/components/CartItem"
+import books from "@mocks/cartbooks.json";
+import { currencyFormat } from '../../../shared/hooks/useCurrencyFormat';
+
+const CheckoutPage = () => {
     const [formData, setFormData] = useState({
         nombre: "",
         direccion: "",
@@ -15,19 +16,19 @@ const CheckoutPage = () =>
     const cartItems = books.slice(0, 3);
     const total = cartItems.reduce((sum, item) => sum + item.precio, 0);
 
-    const handleChange = (e) =>
-    {
+    const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
         });
     };
 
-    const handleSubmit = (e) =>
-    {
+    const handleSubmit = (e) => {
         e.preventDefault();
         alert("Pago procesado correctamente. ¡Gracias por tu compra!");
     };
+
+    const { formatCurrency } = currencyFormat();
 
     return (
         <div className="max-w-lg mx-auto shadow-md rounded-lg p-6">
@@ -42,7 +43,7 @@ const CheckoutPage = () =>
                     ))}
                 </ul>
                 <p className="mt-4 text-right font-bold text-lg">
-                    Total: ${total.toFixed(2)}
+                    Total: {formatCurrency(total)}
                 </p>
             </div>
 

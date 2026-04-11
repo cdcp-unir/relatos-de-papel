@@ -1,14 +1,17 @@
-import books from "./../../../mocks/books.json";
+import { avatar } from "../../../shared/hooks/avatar";
+import books from "@mocks/books.json";
 
 const Profile = () => {
+  const { initials } = avatar("Cristian", "Chiguano");
+
   return (
-    <div className="flex flex-col gap-6 p-6 max-w-5xl mx-auto">          
+    <div className="flex flex-col gap-6 p-6 max-w-5xl mx-auto">
       <div className="stats shadow bg-base-100">
         <div className="stat">
           <div className="stat-figure text-secondary">
             <div className="avatar avatar-online">
               <div className="w-16 rounded-full bg-neutral text-neutral-content flex items-center justify-center">
-                <span className="text-xl font-bold">CC</span>
+                <span className="text-xl font-bold">{initials}</span>
               </div>
             </div>
           </div>
@@ -20,7 +23,7 @@ const Profile = () => {
             Miembro desde 12 de marzo de 2024
           </div>
         </div>
-      </div>      
+      </div>
       <div className="card bg-base-100 shadow-md">
         <div className="card-body">
           <h2 className="card-title text-lg">Tus pedidos más recientes</h2>
@@ -30,10 +33,10 @@ const Profile = () => {
                 <div>
                   <p className="font-semibold">{book.titulo}</p>
                   <p className="text-xs uppercase opacity-70">{book.autor}</p>
-                </div>                
+                </div>
               </li>
             ))}
-          </ul>          
+          </ul>
         </div>
       </div>
     </div>

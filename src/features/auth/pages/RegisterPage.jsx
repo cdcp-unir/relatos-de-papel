@@ -1,13 +1,13 @@
-import { useMemo, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-
 import { InputPassword, InputText } from "../../../shared/components/InputText";
+import { Link, useNavigate } from "react-router-dom";
+import { useMemo, useState } from "react";
+
 import { Button } from "../../../shared/components/Button";
 import { Header } from "../../../shared/components/Header";
-import { register } from "../services/RegisterService";
 import { PATHS } from "../../../app/router/paths";
-import usersMock from "../../../mocks/users.json";
+import { register } from "../services/RegisterService";
+import { useTranslation } from "react-i18next";
+import usersMock from "@mocks/users.json";
 
 export default function RegisterPage() {
   const navigate = useNavigate();

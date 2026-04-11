@@ -4,20 +4,35 @@
         "username": "will117",
         "password": "password123",
         "email": "will117@gmail.com",
-        "role": "admin"
+        "role": "admin",
+        "firstName":"",
+        "lastName":""
     },
     {
         "id": 2,
         "username": "michael784",
         "password": "password234",
         "email": "michael784@gmail.com",
-        "role": "user"
+        "role": "user",
+        "firstName":"",
+        "lastName":""
     },
     {
         "id": 3,
         "username": "ssamaeljs",
         "password": "ssamaeljs",
         "email": "ssamael.dev@unir.net",
-        "role": "admin"
+        "role": "admin",
+        "firstName":"",
+        "lastName":""
+    },
+    {
+        "id": 4,
+        "username": "cdcp",
+        "password": "abc123",
+        "email": "cdcp@unir.net",
+        "role": "admin",
+        "firstName":"Cristian",
+        "lastName":"Chiguano"
     }
 ]
