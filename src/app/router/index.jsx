@@ -15,6 +15,7 @@ import RegisterPage from "../../features/auth/pages/RegisterPage";
 
 import { isAuthenticated } from "../../state/loginState";
 import BookDetail from "../../features/books-details/pages/BookDetail";
+import { DetailProvider } from "../../shared/context/DetailContext/DetailProvider";
 
 const router = createBrowserRouter([
   {
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: PATHS.HOME,
-        element: <HomePage />,
+        element: <DetailProvider><HomePage /></DetailProvider>,
       },
       {
         path: PATHS.PROFILE,
