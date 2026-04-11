@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { PATHS } from "../../../app/router/paths";
-import books from "../../../mocks/cartbooks.json";
+
 import CartItem from "../../../shared/components/CartItem"
+import { PATHS } from "../../../app/router/paths";
+import books from "@mocks/cartbooks.json";
+import { currencyFormat } from "../../../shared/hooks/useCurrencyFormat";
 import { useNavigate } from "react-router-dom";
 
 const CartPage = () =>
@@ -16,6 +18,8 @@ const CartPage = () =>
     const total = items.reduce((sum, item) => sum + item.precio, 0);
 
     const navigate = useNavigate();
+
+    const {formatCurrency} = currencyFormat();
 
     return (
         <div className="max-w-4xl mx-auto shadow-md rounded-lg p-6 w-full">
@@ -33,11 +37,11 @@ const CartPage = () =>
 
                     <div className="mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                         <p className="font-bold text-lg text-center md:text-left">
-                            Total: ${total.toFixed(2)}
+                            Total: {formatCurrency(total)}
                         </p>
                         <button
                             onClick={() => navigate(PATHS.CHECKOUT)}
-                            className="w-full md:w-auto bg-blue-900  text-white font-semibold py-2 px-6 rounded-md hover:bg-blue-600 transition"
+                            className="w-full md:w-auto btn btn-primary font-semibold py-2 px-6 rounded-md transition"
                         >
                             Ir a pagar
                         </button>

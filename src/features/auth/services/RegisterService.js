@@ -19,7 +19,7 @@ function validateUserExists(users, email, username) {
 
 export async function register({ email, username, password }) {
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  const users = (await import("../../../mocks/users.json")).default;
+  const users = (await import("@mocks/users.json")).default;
 
   validateUserExists(users, email, username);
   const newUser = {

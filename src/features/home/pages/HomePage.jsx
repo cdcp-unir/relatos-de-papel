@@ -1,5 +1,5 @@
 import Book from '../../../shared/components/Book';
-import Books from '../../../mocks/books.json'
+import Books from '@mocks/books.json'
 import SearchBar from '../../../shared/components/SearchBar';
 import { useContext, useEffect } from 'react';
 import { DetailContext } from '../../../shared/context/DetailContext/DetailsContext';
