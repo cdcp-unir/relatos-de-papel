@@ -1,8 +1,9 @@
+import { useContext, useEffect } from 'react';
+
 import Book from '../../../shared/components/Book';
 import Books from '@mocks/books.json'
-import SearchBar from '../../../shared/components/SearchBar';
-import { useContext, useEffect } from 'react';
 import { DetailContext } from '../../../shared/context/DetailContext/DetailsContext';
+import SearchBar from '../../../shared/components/SearchBar';
 
 function HomePage() {
   const { busqueda } = useContext(DetailContext);
@@ -25,6 +26,7 @@ function HomePage() {
             categoria={element.categoria}
             autor={element.autor}
             precio={element.precio}
+            id={element.id}
           />
         ))}
       </div>

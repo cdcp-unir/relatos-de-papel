@@ -1,7 +1,7 @@
 import { currencyFormat } from '../hooks/useCurrencyFormat';
 import { useNavigate } from 'react-router';
 
-function Book({ rutaImagen, titulo, detalle, categoria, autor, precio }) {
+function Book({ id, rutaImagen, titulo, detalle, categoria, autor, precio }) {
     const navigate = useNavigate();
     const { formatCurrency } = currencyFormat();
 
@@ -22,8 +22,7 @@ function Book({ rutaImagen, titulo, detalle, categoria, autor, precio }) {
                     <p className="text-base font-bold text-primary">{formatCurrency(precio)}</p>
                 </div>
                 <div className="card-actions justify-between mt-4">
-                    <button onClick={() => navigate(`/books/${detalle}`)} className="btn btn-secondary">Ver más</button>
-                    <button className="btn btn-primary">Añadir</button>
+                    <button onClick={() => navigate(`/books/${id}`)} className="btn btn-secondary">Ver detalles</button>                    
                 </div>
             </div>
         </div>
