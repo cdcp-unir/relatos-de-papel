@@ -5,41 +5,146 @@ const Profile = () => {
   const { initials } = avatar("Cristian", "Chiguano");
 
   return (
-    <div className="flex flex-col gap-6 p-6 max-w-5xl mx-auto">
-      <div className="stats shadow bg-base-100">
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <div className="avatar avatar-online">
-              <div className="w-16 rounded-full bg-neutral text-neutral-content flex items-center justify-center">
-                <span className="text-xl font-bold">{initials}</span>
+    <>
+      <div className="flex flex-col gap-6 p-6 max-w-5xl mx-auto">
+        <div className="stats shadow bg-base-100">
+          <div className="stat">
+            <div className="stat-figure text-secondary">
+              <div className="avatar avatar-online">
+                <div className="w-16 rounded-full bg-neutral text-neutral-content flex items-center justify-center">
+                  <span className="text-xl font-bold">{initials}</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="stat-value text-lg font-bold">Cristian Chiguano</div>
-          <div className="stat-title text-sm opacity-70">
-            cristiandavid.9298@comunidadunir.net
-          </div>
-          <div className="stat-desc text-primary text-xs">
-            Miembro desde 12 de marzo de 2024
+            <div className="stat-value text-lg font-bold">Cristian Chiguano</div>
+            <div className="stat-title text-sm opacity-70">
+              cristiandavid.9298@comunidadunir.net
+            </div>
+            <div className="stat-desc text-primary text-xs">
+              Miembro desde 12 de marzo de 2024
+            </div>
           </div>
         </div>
+
+        <h2 className="card-title text-lg">Tus pedidos más recientes</h2>
+
+        <details className="collapse bg-base-100 border-base-300 border">
+          <summary className="collapse-title font-semibold">
+            <div className="grid grid-cols-12 gap-4">
+              <div className="col-span-4">Pedido realizado: 16/abril/2026</div>
+              <div className="col-span-2">Total: $5.00</div>
+              <div className="col-span-2"><div className="badge badge-warning">Pendiente</div></div>
+              <div className="col-span-4">Pedido N° 87345423-234234</div>
+            </div>
+          </summary>
+          <div className="collapse-content text-sm">
+            <ul className="divide-y divide-base-200">
+              {books.slice(0, 5).map((book, index) => (
+                <li key={index} className="py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-semibold">{book.titulo}</p>
+                    <p className="text-xs uppercase opacity-70">{book.autor}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </details>
+
+        <details className="collapse bg-base-100 border-base-300 border">
+          <summary className="collapse-title font-semibold">
+            <div className="grid grid-cols-12 gap-4">
+              <div className="col-span-4">Pedido realizado: 16/abril/2026</div>
+              <div className="col-span-2">Total: $5.00</div>
+              <div className="col-span-2"><div className="badge badge-primary">Enviado</div></div>
+              <div className="col-span-4">Pedido N° 87345423-234234</div>
+            </div>
+          </summary>
+          <div className="collapse-content text-sm">
+            <ul className="divide-y divide-base-200">
+              {books.slice(10, 15).map((book, index) => (
+                <li key={index} className="py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-semibold">{book.titulo}</p>
+                    <p className="text-xs uppercase opacity-70">{book.autor}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </details>
+
+        <details className="collapse bg-base-100 border-base-300 border">
+          <summary className="collapse-title font-semibold">
+            <div className="grid grid-cols-12 gap-4">
+              <div className="col-span-4">Pedido realizado: 16/abril/2026</div>
+              <div className="col-span-2">Total: $5.00</div>
+              <div className="col-span-2"><div className="badge badge-primary">Enviado</div></div>
+              <div className="col-span-4">Pedido N° 87345423-234234</div>
+            </div>
+          </summary>
+          <div className="collapse-content text-sm">
+            <ul className="divide-y divide-base-200">
+              {books.slice(20, 21).map((book, index) => (
+                <li key={index} className="py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-semibold">{book.titulo}</p>
+                    <p className="text-xs uppercase opacity-70">{book.autor}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </details>
+
+        <details className="collapse bg-base-100 border-base-300 border">
+          <summary className="collapse-title font-semibold">
+            <div className="grid grid-cols-12 gap-4">
+              <div className="col-span-4">Pedido realizado: 16/abril/2026</div>
+              <div className="col-span-2">Total: $5.00</div>
+              <div className="col-span-2"><div className="badge badge-primary">Enviado</div></div>
+              <div className="col-span-4">Pedido N° 87345423-234234</div>
+            </div>
+          </summary>
+          <div className="collapse-content text-sm">
+            <ul className="divide-y divide-base-200">
+              {books.slice(1, 3).map((book, index) => (
+                <li key={index} className="py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-semibold">{book.titulo}</p>
+                    <p className="text-xs uppercase opacity-70">{book.autor}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </details>
+
+        <details className="collapse bg-base-100 border-base-300 border">
+          <summary className="collapse-title font-semibold">
+            <div className="grid grid-cols-12 gap-4">
+              <div className="col-span-4">Pedido realizado: 16/abril/2026</div>
+              <div className="col-span-2">Total: $5.00</div>
+              <div className="col-span-2"><div className="badge badge-primary">Enviado</div></div>
+              <div className="col-span-4">Pedido N° 87345423-234234</div>
+            </div>
+          </summary>
+          <div className="collapse-content text-sm">
+            <ul className="divide-y divide-base-200">
+              {books.slice(26, 30).map((book, index) => (
+                <li key={index} className="py-3 flex justify-between items-center">
+                  <div>
+                    <p className="font-semibold">{book.titulo}</p>
+                    <p className="text-xs uppercase opacity-70">{book.autor}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </details>
       </div>
-      <div className="card bg-base-100 shadow-md">
-        <div className="card-body">
-          <h2 className="card-title text-lg">Tus pedidos más recientes</h2>
-          <ul className="divide-y divide-base-200">
-            {books.slice(0, 5).map((book, index) => (
-              <li key={index} className="py-3 flex justify-between items-center">
-                <div>
-                  <p className="font-semibold">{book.titulo}</p>
-                  <p className="text-xs uppercase opacity-70">{book.autor}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
+    </>
+
   );
 };
 
