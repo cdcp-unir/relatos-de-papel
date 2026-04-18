@@ -16,13 +16,13 @@ function Book({ id, rutaImagen, titulo, detalle, categoria, autor, precio }) {
             </figure>
             <div className="card-body p-0 flex flex-col justify-between flex-1">
                 <div className="space-y-1">
-                    <h2 className="card-title text-lg font-semibold line-clamp-1">{titulo}</h2>
+                    <h2 className="card-title text-lg font-semibold">{titulo}</h2>
                     <p className="text-sm text-gray-600 line-clamp-1">Categoría: {categoria}</p>
                     <p className="text-sm text-gray-600 line-clamp-1">Autor: {autor}</p>
                     <p className="text-base font-bold text-primary">{formatCurrency(precio)}</p>
                 </div>
                 <div className="card-actions justify-between mt-4">
-                    <button onClick={() => navigate(`/books/${id}`)} className="btn btn-secondary">Ver detalles</button>                    
+                    <button onClick={() => navigate(`/books/${id}`)} className="btn btn-primary">Ver detalles</button>                    
                 </div>
             </div>
         </div>

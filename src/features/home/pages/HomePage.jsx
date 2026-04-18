@@ -1,16 +1,12 @@
-import { useContext, useEffect } from 'react';
-
 import Book from '../../../shared/components/Book';
 import Books from '@mocks/books.json'
 import { DetailContext } from '../../../shared/context/DetailContext/DetailsContext';
 import SearchBar from '../../../shared/components/SearchBar';
+import { useContext } from 'react';
 
 function HomePage() {
   const { busqueda } = useContext(DetailContext);
-  var filtro = Books.filter((producto) =>
-    producto.autor.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase())
-    || producto.categoria.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase())
-    || producto.editorial.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()));
+  var filtro = Books.filter((producto) => producto.titulo.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()));
 
   return (
     <>
