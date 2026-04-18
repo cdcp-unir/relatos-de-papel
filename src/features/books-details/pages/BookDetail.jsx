@@ -22,7 +22,7 @@ function BookDetail() {
                         <h2 className="text-xl font-semibold mb-4">{libro.autor}</h2>
 
                         <div className="flex flex-wrap gap-4 mb-4">
-                            <span className="badge badge-primary text-lg">{libro.categoria}</span>
+                            <span className="badge badge-accent text-lg">{libro.categoria}</span>
                             <span className="text-2xl font-bold">{formatCurrency(libro.precio)}</span>
                         </div>  
                         <p className="text-base leading-relaxed text-justify mb-6">

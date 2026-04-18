@@ -1,8 +1,10 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
-import RootLayout from "../layouts/RootLayout";
+import { Navigate, createBrowserRouter } from "react-router-dom";
+
 import AuthLayout from "../layouts/AuthLayout";
+import BookDetail from "../../features/books-details/pages/BookDetail";
 import CartPage from "../../features/cart/pages/CartPage";
 import CheckoutPage from "../../features/checkout/pages/CheckoutPage";
+import { DetailProvider } from "../../shared/context/DetailContext/DetailProvider";
 import HomePage from "../../features/home/pages/HomePage";
 import LandingPage from "../../features/landing/pages/LandingPage";
 import LoginPage from "../../features/auth/pages/LoginPage";
@@ -11,11 +13,10 @@ import { PATHS } from "./paths";
 import PrivateLayout from "../layouts/PrivateLayout";
 import Profile from "../../features/profile/pages/Profile";
 import ProtectedRoute from "../../shared/components/ProtectedRoute";
+import PublicLayout from "../layouts/PublicLayout";
 import RegisterPage from "../../features/auth/pages/RegisterPage";
-
+import RootLayout from "../layouts/RootLayout";
 import { isAuthenticated } from "../../state/loginState";
-import BookDetail from "../../features/books-details/pages/BookDetail";
-import { DetailProvider } from "../../shared/context/DetailContext/DetailProvider";
 
 const router = createBrowserRouter([
   {
@@ -54,15 +55,26 @@ const router = createBrowserRouter([
   },
   {
     element: (
-      <ProtectedRoute>
-        <PrivateLayout />
-      </ProtectedRoute>
+      <PublicLayout></PublicLayout>
     ),
     children: [
       {
         path: PATHS.HOME,
         element: <DetailProvider><HomePage /></DetailProvider>,
       },
+      {
+        path: PATHS.BOOK_DETAIL,
+        element: <BookDetail />,
+      },
+    ]
+  },
+  {
+    element: (
+      <ProtectedRoute>
+        <PrivateLayout />
+      </ProtectedRoute>
+    ),
+    children: [
       {
         path: PATHS.PROFILE,
         element: <Profile />,
@@ -74,10 +86,6 @@ const router = createBrowserRouter([
       {
         path: PATHS.CHECKOUT,
         element: <CheckoutPage />,
-      },
-      {
-        path: PATHS.BOOK_DETAIL,
-        element: <BookDetail />,
       },
     ],
   },
