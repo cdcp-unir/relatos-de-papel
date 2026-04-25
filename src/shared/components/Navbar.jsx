@@ -1,3 +1,6 @@
+import React, { useContext } from "react";
+
+import { GlobalContext } from "../context/GlobalContext";
 import { Link } from "react-router-dom";
 import { PATHS } from "./../../app/router/paths";
 import { avatar } from "../hooks/avatar";
@@ -9,6 +12,7 @@ const Navbar = () => {
     const { formatCurrency } = currencyFormat();
     const { initials } = avatar("Cristian", "Chiguano");
     const { isAuthenticated } = useLoginState();
+    const { cart } = useContext(GlobalContext);
 
     return (
         <>
@@ -33,13 +37,13 @@ const Navbar = () => {
                       0a2 2 0 100 4 2 2 0 000-4zm-8 
                       2a2 2 0 11-4 0 2 2 0 014 0z" />
                                         </svg>
-                                        <span className="badge badge-sm indicator-item bg-primary text-white">8</span>
+                                        <span className="badge badge-sm indicator-item bg-primary text-white">{cart.length}</span>
                                     </div>
                                 </div>
                                 <div tabIndex={0} className="card card-compact dropdown-content bg-base-100 mt-3 w-56 shadow-lg">
                                     <div className="card-body">
-                                        <span className="text-sm font-semibold">8 Items</span>
-                                        <span className="text-xs opacity-70">Subtotal: {formatCurrency(999)}</span>
+                                        <span className="text-sm font-semibold">{cart.length} Items</span>
+                                        <span className="text-xs opacity-70">Subtotal: {formatCurrency(cart.reduce((sum, item) => sum + item.subtotal, 0))}</span>
                                         <div className="card-actions mt-2">
                                             <Link to={PATHS.CART} className="btn btn-primary btn-sm w-full">Ver carrito</Link>
                                         </div>
