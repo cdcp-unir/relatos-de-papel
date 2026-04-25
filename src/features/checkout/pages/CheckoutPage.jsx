@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import CartItem from "../../../shared/components/CartItem"
-import books from "@mocks/cartbooks.json";
+import { GlobalContext } from "../../../shared/context/GlobalContext";
 import { currencyFormat } from '../../../shared/hooks/useCurrencyFormat';
+import { useNavigate } from "react-router-dom";
 
 const CheckoutPage = () => {
     const [formData, setFormData] = useState({
@@ -13,8 +14,10 @@ const CheckoutPage = () => {
         cvv: "",
     });
 
-    const cartItems = books.slice(0, 3);
-    const total = cartItems.reduce((sum, item) => sum + item.precio, 0);
+const navigate = useNavigate();
+
+    const { cart, clear } = useContext(GlobalContext);
+    const total = cart.reduce((sum, item) => sum + item.precio, 0);
 
     const handleChange = (e) => {
         setFormData({
@@ -26,6 +29,8 @@ const CheckoutPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert("Pago procesado correctamente. ¡Gracias por tu compra!");
+        clear();
+        navigate("/home");
     };
 
     const { formatCurrency } = currencyFormat();
@@ -37,11 +42,7 @@ const CheckoutPage = () => {
             {/* Resumen del pedido */}
             <div className="mb-6 border-b pb-4">
                 <h3 className="text-lg font-semibold mb-4">Resumen del pedido</h3>
-                <ul className="space-y-4">
-                    {cartItems.map((item) => (
-                        <CartItem item={item} mostrarBoton={false} />
-                    ))}
-                </ul>
+                <CartItem books={cart} mostrarBoton={false} />
                 <p className="mt-4 text-right font-bold text-lg">
                     Total: {formatCurrency(total)}
                 </p>
@@ -120,7 +121,7 @@ const CheckoutPage = () => {
 
                 <button
                     type="submit"
-                    className="w-full bg-yellow-700 text-white font-semibold py-2 px-4 rounded-md hover:bg-yellow-800 transition"
+                    className="btn btn-primary text-white font-semibold py-2 px-4 rounded-md hover:bg-yellow-800 transition"
                 >
                     Confirmar pago
                 </button>
