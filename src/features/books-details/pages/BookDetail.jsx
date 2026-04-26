@@ -38,7 +38,7 @@ function BookDetail() {
                             <button className="btn btn-primary" onClick={handleAdd}>
                                 Añadir al carrito
                             </button>
-                            <Link to="/home" className="btn btn-accent">
+                            <Link to="/home" className="btn btn-soft">
                                 Regresar
                             </Link>
                         </div>
