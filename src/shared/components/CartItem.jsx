@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
+
+import { GlobalContext } from "../context/GlobalContext";
 import { currencyFormat } from "../hooks/useCurrencyFormat";
 
 const CartItem = ({ books, mostrarBoton = true }) => {
     const { formatCurrency } = currencyFormat();
+    const { decreaseQuantity, increaseQuantity, remove } = useContext(GlobalContext);    
 
     return (
         <>
@@ -14,21 +17,31 @@ const CartItem = ({ books, mostrarBoton = true }) => {
                             <th>Cantidad</th>
                             <th>Precio unitario</th>
                             <th>Subtotal</th>
-                            <th>Acciones</th>
+                            {mostrarBoton && (<th>Acciones</th>)}
                         </tr>
                     </thead>
                     <tbody>
                         {books.map((item) => (
                             <tr>
                                 <td>{item.titulo}</td>
-                                <td>{item.quantity}</td>
+                                <td>
+                                    <div className="flex items-center justify-center space-x-2">
+                                        <button onClick={() => decreaseQuantity(item.id)} className="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">
+                                            -
+                                        </button>
+                                        <span>{item.quantity}</span>
+                                        <button onClick={() => increaseQuantity(item.id)} className="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">
+                                            +
+                                        </button>
+                                    </div>
+                                </td>
                                 <td>{formatCurrency(item.precio)}</td>
                                 <td>{formatCurrency(item.subtotal)}</td>
-                                <td>
-                                    {mostrarBoton && (
-                                        <button className="btn btn-error px-3 py-1 rounded transition w-full sm:w-auto">Quitar</button>
-                                    )}
-                                </td>
+                                {mostrarBoton && (
+                                    <td>
+                                        <button onClick={() => remove(item.id)} className="btn btn-error px-3 py-1 rounded transition w-full sm:w-auto">Quitar</button>
+                                    </td>
+                                )}
                             </tr>
                         ))}
                     </tbody>

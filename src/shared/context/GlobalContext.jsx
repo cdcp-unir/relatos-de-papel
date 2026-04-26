@@ -6,7 +6,7 @@ export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
     const { books, setBooks } = useBooks();
-    const { cart, addBook, clear } = useCart();
+    const { cart, addBook, clear, increaseQuantity, decreaseQuantity, remove, totalBooks, total } = useCart();
 
     return (
         <GlobalContext.Provider
@@ -15,7 +15,12 @@ export const GlobalProvider = ({ children }) => {
                 setBooks,
                 cart,
                 addBook,
-                clear
+                clear,
+                increaseQuantity, 
+                decreaseQuantity, 
+                remove, 
+                totalBooks, 
+                total
             }}
         >
             {children}
