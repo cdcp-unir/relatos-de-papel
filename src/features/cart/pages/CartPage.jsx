@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 
+import { Button } from "../../../shared/components/Button";
 import CartItem from "../../../shared/components/CartItem";
 import { GlobalContext } from "../../../shared/context/GlobalContext";
 import { PATHS } from "../../../app/router/paths";
@@ -7,11 +8,9 @@ import { currencyFormat } from "../../../shared/hooks/useCurrencyFormat";
 import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
-    const { cart } = useContext(GlobalContext);
-    const total = cart.reduce((sum, item) => sum + item.precio, 0);
+    const { cart, total } = useContext(GlobalContext);    
     const navigate = useNavigate();
-    const { formatCurrency } = currencyFormat();
-    const subtotal = cart.reduce((sum, item) => sum + item.subtotal, 0);
+    const { formatCurrency } = currencyFormat();    
 
     return (
         <div className="max-w-5xl mx-auto p-6">
@@ -25,26 +24,26 @@ const CartPage = () => {
                 ) :
                 (
                     <div className="flex flex-col gap-4">
-                        <div className="bg-white shadow rounded-lg p-4">
+                        <div>
                             <CartItem books={cart} mostrarBoton={true} />
                         </div>
                         <div className="text-right font-semibold text-lg mb-6">
                             <span>Total:</span>
-                            <span>{formatCurrency(subtotal)}</span>
+                            <span>{formatCurrency(total)}</span>
                         </div>
                         <div className="flex justify-end gap-4 mb-6">
-                            <button
+                            <Button
                                 onClick={() => navigate(PATHS.CHECKOUT)}
-                                className="btn btn-primary font-semibold py-3 px-6 rounded-md transition hover:scale-105"
+                                className="btn-primary font-semibold py-3 px-6"
                             >
                                 Ir a pagar
-                            </button>
-                            <button
+                            </Button>
+                            <Button
                                 onClick={() => navigate(PATHS.HOME)}
-                                className="btn btn-soft font-semibold py-3 px-6 rounded-md transition hover:scale-105"
+                                className="btn-soft font-semibold py-3 px-6"
                             >
                                 Regresar
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 )}

@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 
+import {Button} from './Button';
 import { GlobalContext } from "../context/GlobalContext";
 import { currencyFormat } from "../hooks/useCurrencyFormat";
 
@@ -14,10 +15,10 @@ const CartItem = ({ books, mostrarBoton = true }) => {
                     <thead className="bg-accent">
                         <tr>
                             <th>Libro</th>
-                            <th>Cantidad</th>
-                            <th>Precio unitario</th>
-                            <th>Subtotal</th>
-                            {mostrarBoton && (<th>Acciones</th>)}
+                            <th className="text-center">Cantidad</th>
+                            <th className="text-center">Precio unitario</th>
+                            <th className="text-center">Subtotal</th>
+                            {mostrarBoton && (<th className="text-center">Acciones</th>)}
                         </tr>
                     </thead>
                     <tbody>
@@ -26,20 +27,23 @@ const CartItem = ({ books, mostrarBoton = true }) => {
                                 <td>{item.titulo}</td>
                                 <td>
                                     <div className="flex items-center justify-center space-x-2">
-                                        <button onClick={() => decreaseQuantity(item.id)} className="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">
-                                            -
-                                        </button>
+                                        {mostrarBoton && (
+                                            <button onClick={() => decreaseQuantity(item.id)} className="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">
+                                                -
+                                            </button>
+                                        )}
                                         <span>{item.quantity}</span>
-                                        <button onClick={() => increaseQuantity(item.id)} className="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">
+                                        {mostrarBoton && (
+                                            <button onClick={() => increaseQuantity(item.id)} className="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">
                                             +
-                                        </button>
+                                        </button>)}
                                     </div>
                                 </td>
-                                <td>{formatCurrency(item.precio)}</td>
-                                <td>{formatCurrency(item.subtotal)}</td>
+                                <td className="text-right">{formatCurrency(item.precio)}</td>
+                                <td className="text-right">{formatCurrency(item.subtotal)}</td>
                                 {mostrarBoton && (
-                                    <td>
-                                        <button onClick={() => remove(item.id)} className="btn btn-error px-3 py-1 rounded transition w-full sm:w-auto">Quitar</button>
+                                    <td className="text-center">
+                                        <Button onClick={() => remove(item.id)} className="btn-error px-3 py-1">Quitar</Button>
                                     </td>
                                 )}
                             </tr>

@@ -11,14 +11,12 @@ const Navbar = () => {
     const { formatCurrency } = currencyFormat();
     const { initials } = avatar("Cristian", "Chiguano");
     const { isAuthenticated } = useLoginState();
-    const { cart } = useContext(GlobalContext);
-    const location = useLocation();
-
-    const subtotal = cart.reduce((sum, item) => sum + item.subtotal, 0);
+    const { cart, total, totalBooks } = useContext(GlobalContext);
+    const location = useLocation();    
 
     return (
         <>
-            <nav className="sticky top-0 z-50 bg-white border-b shadow-sm">
+            <nav className="sticky top-0 z-50 bg-base-100 border-b border-base-200 shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
                         <Link to={PATHS.HOME} className="flex items-center gap-2">
@@ -40,8 +38,8 @@ const Navbar = () => {
                                                 />
                                             </svg>
                                             {cart.length > 0 && (
-                                                <span className="badge badge-sm indicator-item bg-primary text-white">
-                                                    {cart.length}
+                                                <span className="badge badge-sm indicator-item bg-error text-white">
+                                                    {totalBooks}
                                                 </span>
                                             )}
                                         </div>
@@ -50,21 +48,21 @@ const Navbar = () => {
                                         <div className="card-body max-h-60 overflow-y-auto">
                                             {cart.length === 0 ?
                                                 (
-                                                    <p className="text-sm text-gray-500">Carrito vacío</p>
+                                                    <p className="text-base">Carrito vacío</p>
                                                 )
                                                 :
                                                 (
                                                     cart.map((book, idx) => (
-                                                        <p key={idx} className="text-sm text-gray-700">
+                                                        <p key={idx} className="text-sm">
                                                             {book.titulo} <span className="font-bold">({book.quantity})</span>
                                                         </p>
                                                     ))
                                                 )}
-                                            <span className="text-sm text-right opacity-70 mt-2">
-                                                Subtotal: {formatCurrency(subtotal)}
+                                            <span className="text-base text-right font-bold mt-2">
+                                                Subtotal: {formatCurrency(total)}
                                             </span>
                                             <div className="card-actions mt-3">
-                                                <Link to={PATHS.CART} className="btn btn-primary btn-sm w-full">
+                                                <Link to={PATHS.CART} className="btn btn-primary btn-sm w-full rounded-md transition hover:scale-105">
                                                     Ver carrito
                                                 </Link>
                                             </div>
@@ -80,7 +78,7 @@ const Navbar = () => {
                                         </div>
                                     </button>
                                     <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow-lg">
-                                        <li className="px-2 py-1 text-xs opacity-70">
+                                        <li className="px-2 py-1 text-base opacity-70">
                                             Hola Cristian Chiguano
                                         </li>
                                         <li>

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 
-import { DetailContext } from '../context/DetailContext/DetailsContext';
+import { GlobalContext } from '../context/GlobalContext';
 
-function SearchBar() {
-    const { setBusqueda, busqueda } = useContext(DetailContext)
+function SearchBar() {    
+    const { setSearchQuery } = useContext(GlobalContext);
 
     return (
-        <div className='w-2/3 mx-auto'>
+        <div className='w-2/3 mx-auto mb-6'>
             <label className="input w-full">
                 <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor">
@@ -14,7 +14,7 @@ function SearchBar() {
                         <path d="m21 21-4.3-4.3"></path>
                     </g>
                 </svg>
-                <input type="search" placeholder="Buscar aquí..." value={busqueda} onChange={(e) => setBusqueda(e.target.value)} />
+                <input type="search" placeholder="Buscar aquí..." onChange={(e) => setSearchQuery(e.currentTarget.value)} />
             </label>
         </div>
     );

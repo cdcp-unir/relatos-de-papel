@@ -1,14 +1,19 @@
 import React, { useContext, useState } from "react";
 
+import { Button } from "../../../shared/components/Button";
 import CartItem from "../../../shared/components/CartItem";
 import { GlobalContext } from "../../../shared/context/GlobalContext";
+import { PATHS } from "../../../app/router/paths";
 import { currencyFormat } from "../../../shared/hooks/useCurrencyFormat";
 import { useNavigate } from "react-router-dom";
 
 const CheckoutPage = () => {
     const [formData, setFormData] = useState({
         nombre: "",
+        apellido: "",
         direccion: "",
+        email: "",
+        telefono: "",
         tarjeta: "",
         vencimiento: "",
         cvv: "",
@@ -16,9 +21,9 @@ const CheckoutPage = () => {
 
     const navigate = useNavigate();
     const { cart, clear } = useContext(GlobalContext);
-    const total = cart.reduce((sum, item) => sum + item.precio, 0);
-    const impuestos = total * 0.12;
-    const subtotal = total - impuestos;
+    const subtotal = cart.reduce((sum, item) => sum + item.subtotal, 0);
+    const impuestos = subtotal * 0.15;
+    const total = subtotal + impuestos;
 
     const handleChange = (e) => {
         setFormData({
@@ -39,39 +44,57 @@ const CheckoutPage = () => {
     return (
         <div className="max-w-6xl mx-auto p-6">
             <h2 className="text-3xl font-bold mb-8 text-center">Checkout</h2>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Columna izquierda: carrito + formulario */}
                 <div className="md:col-span-2 space-y-6">
-                    {/* Resumen del pedido */}
-                    <div className="bg-white shadow rounded-lg p-6">
+                    <div className="shadow rounded-lg p-6">
                         <h3 className="text-xl font-semibold mb-4">Resumen del pedido</h3>
                         <CartItem books={cart} mostrarBoton={false} />
                     </div>
-
-                    {/* Formulario de pago */}
-                    <form
-                        className="bg-white shadow rounded-lg p-6 space-y-4"
-                        onSubmit={handleSubmit}
-                    >
-                        <h3 className="text-xl font-semibold mb-4">Datos de pago</h3>
-
+                    <form className="shadow rounded-lg p-6 space-y-4" onSubmit={handleSubmit}>
+                        <h3 className="text-xl font-semibold mb-4">Detalles de facturación</h3>
+                        <div className="flex gap-4">
+                            <div className="flex-1">
+                                <label className="block text-sm font-medium">
+                                    Nombres
+                                </label>
+                                <input
+                                    type="text"
+                                    name="nombre"
+                                    value={formData.nombre}
+                                    onChange={handleChange}
+                                    required
+                                    className="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-indigo-400"
+                                />
+                            </div>
+                            <div className="flex-1">
+                                <label className="block text-sm font-medium">
+                                    Apellidos
+                                </label>
+                                <input
+                                    type="text"
+                                    name="apellido"
+                                    value={formData.apellido}
+                                    onChange={handleChange}
+                                    required
+                                    className="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-indigo-400"
+                                />
+                            </div>
+                        </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
-                                Nombre completo
+                            <label className="block text-sm font-medium">
+                                Correo electrónico
                             </label>
                             <input
-                                type="text"
-                                name="nombre"
-                                value={formData.nombre}
+                                type="email"
+                                name="email"
+                                value={formData.email}
                                 onChange={handleChange}
                                 required
                                 className="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-indigo-400"
                             />
                         </div>
-
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium">
                                 Dirección
                             </label>
                             <input
@@ -83,9 +106,9 @@ const CheckoutPage = () => {
                                 className="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-indigo-400"
                             />
                         </div>
-
+                        <h3 className="text-xl font-semibold mb-4">Datos de pago</h3>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium">
                                 Número de tarjeta
                             </label>
                             <input
@@ -95,13 +118,11 @@ const CheckoutPage = () => {
                                 onChange={handleChange}
                                 required
                                 className="mt-1 w-full border rounded-md px-3 py-2 focus:ring focus:ring-indigo-400"
-                                pattern="\d{13,19}"
                             />
                         </div>
-
                         <div className="flex gap-4">
                             <div className="flex-1">
-                                <label className="block text-sm font-medium text-gray-700">
+                                <label className="block text-sm font-medium">
                                     Vencimiento (MM/AA)
                                 </label>
                                 <input
@@ -114,7 +135,7 @@ const CheckoutPage = () => {
                                 />
                             </div>
                             <div className="flex-1">
-                                <label className="block text-sm font-medium text-gray-700">
+                                <label className="block text-sm font-medium">
                                     CVV
                                 </label>
                                 <input
@@ -127,31 +148,31 @@ const CheckoutPage = () => {
                                 />
                             </div>
                         </div>
-
-                        <button
-                            type="submit"
-                            className="w-full btn btn-primary text-white font-semibold py-3 rounded-md transition hover:scale-105"
-                        >
-                            Confirmar pago
-                        </button>
                     </form>
                 </div>
-
-                {/* Columna derecha: resumen de pagos */}
                 <div className="bg-gray-50 shadow rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-4 text-right">Resumen de pagos</h3>
-                    <p className="flex justify-between text-lg mb-2">
+                    <p className="flex justify-between mb-2">
                         <span>Subtotal:</span>
                         <span>{formatCurrency(subtotal)}</span>
                     </p>
-                    <p className="flex justify-between text-lg mb-2">
-                        <span>Impuestos (IVA 12%):</span>
+                    <p className="flex justify-between mb-2">
+                        <span>Impuestos (IVA 15%):</span>
                         <span>{formatCurrency(impuestos)}</span>
                     </p>
                     <p className="flex justify-between text-xl font-bold border-t pt-4">
                         <span>Total:</span>
                         <span>{formatCurrency(total)}</span>
                     </p>
+                    <Button type="submit" className="btn-primary font-semibold w-full py-3 mt-6">
+                        Confirmar pago
+                    </Button>
+                    <Button
+                        onClick={() => navigate(PATHS.HOME)}
+                        className="btn-soft font-semibold py-3 w-full mt-3"
+                    >
+                        Regresar
+                    </Button>
                 </div>
             </div>
         </div>

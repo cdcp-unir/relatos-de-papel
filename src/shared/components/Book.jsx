@@ -1,7 +1,8 @@
+import {Button} from '../../shared/components/Button';
 import { currencyFormat } from '../hooks/useCurrencyFormat';
 import { useNavigate } from 'react-router';
 
-function Book({ id, rutaImagen, titulo, detalle, categoria, autor, precio }) {
+function Book({ id, rutaImagen, titulo,  categoria, autor, precio, stock }) {
     const navigate = useNavigate();
     const { formatCurrency } = currencyFormat();
 
@@ -11,21 +12,22 @@ function Book({ id, rutaImagen, titulo, detalle, categoria, autor, precio }) {
                 <img
                     src={rutaImagen}
                     alt={`Portada del libro ${titulo}`}
-                    className="rounded-xl object-cover h-48 w-full"
+                    className="h-48 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
                 />
             </figure>            
             <div className="card-body">
                 <h2 className="card-title text-lg font-bold line-clamp-2">{titulo}</h2>
                 <p className="text-sm text-primary">{categoria}</p>
                 <p className="text-sm text-gray-500">{autor}</p>
-                <p className="text-lg font-bold mt-2">{formatCurrency(precio)}</p>                
-                <div className="card-actions justify-end mt-4">
-                    <button
+                <p className="text-lg font-bold">{formatCurrency(precio)}</p>                
+                {stock === 0 ? <span className="text-sm badge badge-error">Agotado</span> : <span className="text-sm badge badge-success">Disponible</span>}
+                <div className="card-actions justify-end">
+                    <Button
                         onClick={() => navigate(`/books/${id}`)}
-                        className="btn btn-primary btn-sm"
+                        className="btn-primary"
                     >
                         Detalles
-                    </button>
+                    </Button>                    
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ export const Button = ({ children, onClick, type = "button", className = "", isL
   <button 
     type={type} 
     onClick={onClick} 
-    className={`btn ${className}`} 
+    className={`btn ${className} rounded-md transition hover:scale-105`} 
     disabled={isLoading}
   >
     {isLoading ? "Cargando..." : children}

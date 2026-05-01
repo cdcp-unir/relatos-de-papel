@@ -9,7 +9,7 @@
     "stock": 25,
     "detalle": "En un futuro lejano, las casas nobles luchan por el control del planeta Arrakis, la única fuente de la especia melange.",
     "editorial": "Ace Books",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/dune.jpg"
   },
   {
     "id": 2,
@@ -18,10 +18,10 @@
     "precio": 14.50,
     "categoria": "Ciencia Ficción",
     "isbn": "9780441569595",
-    "stock": 18,
+    "stock": 0,
     "detalle": "Una obra clave del cyberpunk que sigue a Case, un hacker en un mundo dominado por corporaciones y realidades virtuales.",
     "editorial": "Ace Books",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/neuromante.jpg"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "stock": 30,
     "detalle": "Una saga épica sobre la caída de un imperio galáctico y el intento de preservar el conocimiento humano.",
     "editorial": "Spectra",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/fundacion.jpg"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "stock": 12,
     "detalle": "Una organización controla el tiempo para mejorar la humanidad, pero un hombre empieza a cuestionar el sistema.",
     "editorial": "Debolsillo",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/elFinDeLaEternidad.jpg"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "stock": 40,
     "detalle": "Una distopía sobre un Estado totalitario que vigila y controla todos los aspectos de la vida.",
     "editorial": "Signet Classics",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/1984.jpg"
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "stock": 22,
     "detalle": "En una sociedad donde los libros están prohibidos, un bombero encargado de quemarlos comienza a rebelarse.",
     "editorial": "Simon & Schuster",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/fahrenheit451.jpg"
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "stock": 14,
     "detalle": "Un futuro dominado por la realidad virtual y corporaciones, donde un virus amenaza tanto el mundo digital como el real.",
     "editorial": "Bantam Books",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/snow_crash.jpg"
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@
     "stock": 10,
     "detalle": "Un enviado humano llega a un planeta donde sus habitantes no tienen género fijo.",
     "editorial": "Ace Books",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/la-mano-izquierda-de-la-oscuridad.jpg"
   },
   {
     "id": 9,
@@ -105,7 +105,7 @@
     "stock": 28,
     "detalle": "Niños genios son entrenados para liderar una guerra interplanetaria contra una raza alienígena.",
     "editorial": "Tor Books",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/el-juego-de-ender.png"
   },
   {
     "id": 10,
@@ -114,10 +114,10 @@
     "precio": 13.50,
     "categoria": "Ciencia Ficción",
     "isbn": "9781451678192",
-    "stock": 20,
+    "stock": 0,
     "detalle": "Relatos interconectados sobre la colonización humana de Marte y el choque entre civilizaciones.",
     "editorial": "Simon & Schuster",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/cronicas-marcianas.jpg"
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@
     "stock": 35,
     "detalle": "La historia de la familia Buendía a lo largo de varias generaciones en el mítico pueblo de Macondo.",
     "editorial": "Vintage Español",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/cien-anos-de-soledad.jpg"
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@
     "stock": 20,
     "detalle": "Las aventuras de un hidalgo que enloquece leyendo libros de caballería y decide convertirse en caballero andante.",
     "editorial": "Espasa",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/don-quijote.jpg"
   },
   {
     "id": 13,
@@ -153,7 +153,7 @@
     "stock": 28,
     "detalle": "Una historia de amor y desencuentros marcada por las normas sociales de la Inglaterra del siglo XIX.",
     "editorial": "Penguin Classics",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/orgullo-y-prejuicio.png"
   },
   {
     "id": 14,
@@ -165,7 +165,7 @@
     "stock": 32,
     "detalle": "Un joven descubre un libro misterioso que cambiará su vida en la Barcelona de la posguerra.",
     "editorial": "Planeta",
-    "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
+    "portadas": "/images/books/la-sombra-del-viento.png"
   },
   {
     "id": 15,
@@ -174,7 +174,7 @@
     "precio": 13.60,
     "categoria": "Novelas",
     "isbn": "9780061122415",
-    "stock": 40,
+    "stock": 0,
     "detalle": "Un viaje espiritual sobre la búsqueda de los sueños personales y el sentido de la vida.",
     "editorial": "HarperOne",
     "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
@@ -270,7 +270,7 @@
     "precio": 13.20,
     "categoria": "Infantiles",
     "isbn": "9780142410318",
-    "stock": 25,
+    "stock": 0,
     "detalle": "Charlie gana un boleto dorado para visitar la increíble fábrica del excéntrico Willy Wonka.",
     "editorial": "Puffin Books",
     "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
@@ -366,7 +366,7 @@
     "precio": 11.75,
     "categoria": "Infantiles",
     "isbn": "9780140361216",
-    "stock": 24,
+    "stock": 0,
     "detalle": "Las tiernas aventuras de Pooh y sus amigos en el Bosque de los Cien Acres.",
     "editorial": "Puffin Books",
     "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
@@ -438,7 +438,7 @@
     "precio": 10.20,
     "categoria": "Infantiles",
     "isbn": "9780805047905",
-    "stock": 29,
+    "stock": 0,
     "detalle": "Un libro repetitivo y colorido ideal para primeros lectores.",
     "editorial": "Henry Holt and Company",
     "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
@@ -606,7 +606,7 @@
     "precio": 15.10,
     "categoria": "Terror",
     "isbn": "9780141191447",
-    "stock": 20,
+    "stock": 0,
     "detalle": "Cuatro personas pasan una temporada en una casa con un pasado inquietante.",
     "editorial": "Penguin Classics",
     "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
@@ -678,7 +678,7 @@
     "precio": 17.20,
     "categoria": "Ciencia y Tecnología",
     "isbn": "9780553380163",
-    "stock": 30,
+    "stock": 0,
     "detalle": "Una explicación accesible sobre el origen y la naturaleza del universo.",
     "editorial": "Bantam",
     "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
@@ -738,7 +738,7 @@
     "precio": 14.60,
     "categoria": "Ciencia y Tecnología",
     "isbn": "9788499985223",
-    "stock": 34,
+    "stock": 0,
     "detalle": "Guía práctica para comprender el desarrollo cerebral infantil.",
     "editorial": "Plataforma Editorial",
     "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
@@ -882,7 +882,7 @@
     "precio": 19.60,
     "categoria": "Ciencia y Tecnología",
     "isbn": "9780198739838",
-    "stock": 13,
+    "stock": 0,
     "detalle": "Un análisis profundo sobre los riesgos y oportunidades de la inteligencia artificial avanzada.",
     "editorial": "Oxford University Press",
     "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
@@ -894,7 +894,7 @@
     "precio": 13.70,
     "categoria": "Ciencia y Tecnología",
     "isbn": "9780393310726",
-    "stock": 24,
+    "stock": 0,
     "detalle": "Un clásico sobre el uso engañoso de los datos y la estadística.",
     "editorial": "W. W. Norton & Company",
     "portadas": "https://i.pinimg.com/originals/d7/5a/63/d75a636e3b432dee928217fe77e25374.png"
