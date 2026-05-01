@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 
 function SearchBar() {    
-    const { setSearchQuery } = useContext(GlobalContext);
+    const { searchQuery, setSearchQuery } = useContext(GlobalContext);
 
     return (
         <div className='w-2/3 mx-auto mb-6'>
@@ -14,7 +14,7 @@ function SearchBar() {
                         <path d="m21 21-4.3-4.3"></path>
                     </g>
                 </svg>
-                <input type="search" placeholder="Buscar aquí..." onChange={(e) => setSearchQuery(e.currentTarget.value)} />
+                <input type="search" placeholder="Buscar aquí..." value={searchQuery} onChange={(e) => setSearchQuery(e.currentTarget.value)} />
             </label>
         </div>
     );
