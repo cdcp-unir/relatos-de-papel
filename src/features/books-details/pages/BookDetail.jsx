@@ -1,6 +1,7 @@
-import { Link, useParams } from "react-router-dom";
 import React, { useContext } from 'react';
+import { useNavigate, useParams } from "react-router-dom";
 
+import { Button } from '../../../shared/components/Button';
 import { GlobalContext } from "../../../shared/context/GlobalContext";
 import { currencyFormat } from '../../../shared/hooks/useCurrencyFormat';
 
@@ -9,9 +10,9 @@ function BookDetail() {
     const { addBook, books } = useContext(GlobalContext);
     const { formatCurrency } = currencyFormat();
     const book = books.find(x => x.id === Number(bookId));
-
-    const handleAdd = () => {        
-        addBook(book);        
+    const navigate = useNavigate();
+    const handleAdd = () => {
+        addBook(book);
     };
 
     return (
@@ -25,22 +26,21 @@ function BookDetail() {
                     />
                     <div className="max-w-lg">
                         <h1 className="text-4xl font-extrabold mb-2">{book.titulo}</h1>
-                        <h2 className="text-xl font-semibold mb-4">{book.autor}</h2>
-
-                        <div className="flex flex-wrap gap-4 mb-4">
-                            <span className="badge badge-accent text-lg">{book.categoria}</span>
-                            <span className="text-2xl font-bold">{formatCurrency(book.precio)}</span>
-                        </div>
+                        <h2 className="text-xl font-semibold mb-2">{book.autor}</h2>
+                        <span className="badge badge-accent text-lg mb-2">{book.categoria}</span>
+                        <p className="text-2xl font-bold mb-2">{formatCurrency(book.precio)}</p>
                         <p className="text-base leading-relaxed text-justify mb-6">
                             {book.detalle}
                         </p>
                         <div className="flex gap-4">
-                            <button className="btn btn-primary" onClick={handleAdd}>
-                                Añadir al carrito
-                            </button>
-                            <Link to="/home" className="btn btn-soft">
+                            {book.stock > 0 && (
+                                <Button className="btn btn-primary" onClick={handleAdd}>
+                                    Añadir al carrito
+                                </Button>
+                            )}
+                            <Button className="btn btn-soft" onClick={() => navigate(-1)}>
                                 Regresar
-                            </Link>
+                            </Button>
                         </div>
                     </div>
                 </div>
