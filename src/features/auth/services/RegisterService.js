@@ -27,7 +27,7 @@ export async function register({ email, username, password }) {
     email,
     username,
     password,
-    role: "user",
+    role: "user"    
   };
 
   users.push(newUser);

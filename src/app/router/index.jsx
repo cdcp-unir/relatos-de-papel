@@ -4,7 +4,6 @@ import AuthLayout from "../layouts/AuthLayout";
 import BookDetail from "../../features/books-details/pages/BookDetail";
 import CartPage from "../../features/cart/pages/CartPage";
 import CheckoutPage from "../../features/checkout/pages/CheckoutPage";
-import { DetailProvider } from "../../shared/context/DetailContext/DetailProvider";
 import HomePage from "../../features/home/pages/HomePage";
 import LandingPage from "../../features/landing/pages/LandingPage";
 import LoginPage from "../../features/auth/pages/LoginPage";
@@ -60,7 +59,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: PATHS.HOME,
-        element: <DetailProvider><HomePage /></DetailProvider>,
+        element: <HomePage />
       },
       {
         path: PATHS.BOOK_DETAIL,

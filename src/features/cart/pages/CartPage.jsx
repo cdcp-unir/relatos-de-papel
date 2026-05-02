@@ -18,7 +18,7 @@ const CartPage = () => {
 
             {cart.length === 0 ?
                 (
-                    <div className="bg-gray-50 p-6 rounded-lg shadow text-center">
+                    <div className="p-6 rounded-lg shadow text-center">
                         <p className="text-gray-600">Tu carrito está vacío.</p>
                     </div>
                 ) :

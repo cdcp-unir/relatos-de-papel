@@ -1,19 +1,20 @@
 import { Link, useLocation } from "react-router-dom";
 import React, { useContext } from "react";
+import { getLoginState, useLoginState } from "../../state/loginState";
 
 import { GlobalContext } from "../context/GlobalContext";
 import { PATHS } from "./../../app/router/paths";
-import { avatar } from "../hooks/avatar";
+import { avatar } from "../hooks/useAvatar";
 import { currencyFormat } from "../hooks/useCurrencyFormat";
-import { useLoginState } from "../../state/loginState";
 
 const Navbar = () => {
     const { formatCurrency } = currencyFormat();
-    const { initials } = avatar("Cristian", "Chiguano");
+    const {firstName, lastName} = getLoginState();
+    const { initials } = avatar(firstName, lastName);
     const { isAuthenticated } = useLoginState();
     const { cart, total, totalBooks } = useContext(GlobalContext);
     const location = useLocation();    
-
+    
     return (
         <>
             <nav className="sticky top-0 z-50 bg-base-100 border-b border-base-200 shadow-sm">
@@ -79,7 +80,7 @@ const Navbar = () => {
                                     </button>
                                     <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow-lg">
                                         <li className="px-2 py-1 text-base opacity-70">
-                                            Hola Cristian Chiguano
+                                            Hola {`${firstName} ${lastName}`}
                                         </li>
                                         <li>
                                             <Link className="text-sm" to={PATHS.PROFILE}>Perfil</Link>

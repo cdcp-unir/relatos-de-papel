@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 let state = {
   username: '',
@@ -17,7 +17,8 @@ const notify = () => {
 // Función para actualizar el estado global y notificar a los suscriptores
 export const setLoginState = (partialState) => {
   state = { ...state, ...partialState };
-  notify();
+  notify();  
+  console.log("Estado de login actualizado:", state);
 };
 
 // Función para obtener el estado actual (solo lectura)
