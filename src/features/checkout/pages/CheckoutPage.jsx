@@ -150,7 +150,7 @@ const CheckoutPage = () => {
                         </div>
                     </form>
                 </div>
-                <div className="bg-gray-50 shadow rounded-lg p-6">
+                <div className="shadow rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-4 text-right">Resumen de pagos</h3>
                     <p className="flex justify-between mb-2">
                         <span>Subtotal:</span>

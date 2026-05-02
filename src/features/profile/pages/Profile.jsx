@@ -1,10 +1,12 @@
 import { GlobalContext } from '../../../shared/context/GlobalContext';
-import { avatar } from "../../../shared/hooks/avatar";
+import { avatar } from "../../../shared/hooks/useAvatar";
 import { currencyFormat } from '../../../shared/hooks/useCurrencyFormat';
+import { getLoginState } from "../../../state/loginState";
 import { useContext } from 'react';
 
 const Profile = () => {
-  const { initials } = avatar("Cristian", "Chiguano");
+  const {firstName, lastName, email, date} = getLoginState();
+  const { initials } = avatar(firstName, lastName);
   const { formatCurrency } = currencyFormat();
   const { books } = useContext(GlobalContext);
 
@@ -61,9 +63,9 @@ const Profile = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-xl font-bold">Cristian Chiguano</h2>
-          <p className="text-sm opacity-70">cristiandavid.9298@comunidadunir.net</p>
-          <p className="text-xs text-primary">Miembro desde 12 de marzo de 2024</p>
+          <h2 className="text-xl font-bold">{`${firstName} ${lastName}`}</h2>
+          <p className="text-sm opacity-70">{email}</p>
+          <p className="text-xs text-primary">Miembro desde {date}</p>
         </div>
       </div>
 

@@ -10,7 +10,7 @@ function HomePage() {
 
   let search = false;
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+  const itemsPerPage = 9;
   let booksToDisplay = books;
 
   if (searchQuery.length !== 0) {
