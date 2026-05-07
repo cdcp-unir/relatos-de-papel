@@ -148,6 +148,9 @@ const CheckoutPage = () => {
                                 />
                             </div>
                         </div>
+                        <Button type="submit" className="btn btn-primary font-semibold w-full py-3 mt-6">
+                            Confirmar pago
+                        </Button>
                     </form>
                 </div>
                 <div className="shadow rounded-lg p-6">
@@ -164,12 +167,10 @@ const CheckoutPage = () => {
                         <span>Total:</span>
                         <span>{formatCurrency(total)}</span>
                     </p>
-                    <Button type="submit" className="btn-primary font-semibold w-full py-3 mt-6">
-                        Confirmar pago
-                    </Button>
+
                     <Button
                         onClick={() => navigate(PATHS.HOME)}
-                        className="btn-soft font-semibold py-3 w-full mt-3"
+                        className="btn btn-soft font-semibold py-3 w-full mt-3"
                     >
                         Regresar
                     </Button>
