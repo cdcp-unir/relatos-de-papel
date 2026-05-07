@@ -98,7 +98,7 @@ export default function LoginPage() {
                 </Link>
               </p>
             </div>
-            <div>
+            <div className="p-3">
               Credenciales de ingreso<br />
               Correo: administrador@unir.net <br />
               Contraseña: admin
