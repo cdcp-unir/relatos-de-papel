@@ -38,5 +38,15 @@
         "firstName":"Cristian",
         "lastName":"Chiguano",
         "date":"25/08/2025"
+    },    
+    {
+        "id": 5,
+        "username": "admmin",
+        "password": "admin",
+        "email": "administrador@unir.net",
+        "role": "admin",
+        "firstName":"Comunidad",
+        "lastName":"UNIR",
+        "date":"25/08/2023"
     }
 ]

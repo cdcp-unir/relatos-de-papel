@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-
 import { InputPassword, InputText } from "../../../shared/components/InputText";
+import { Link, useNavigate } from "react-router-dom";
+
 import { Button } from "../../../shared/components/Button";
 import Footer from "../../../shared/components/Footer";
 import { Header } from "../../../shared/components/Header";
-import { login } from "../services/LoginService";
 import { PATHS } from "../../../app/router/paths";
+import { login } from "../services/LoginService";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -97,6 +97,11 @@ export default function LoginPage() {
                   {t("login.forgotPassword")}
                 </Link>
               </p>
+            </div>
+            <div className="p-3">
+              Credenciales de ingreso<br />
+              Correo: administrador@unir.net <br />
+              Contraseña: admin
             </div>
           </div>
         </div>
