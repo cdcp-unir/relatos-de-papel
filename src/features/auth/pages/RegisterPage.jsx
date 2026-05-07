@@ -8,30 +8,28 @@ import { PATHS } from "../../../app/router/paths";
 import { register } from "../services/RegisterService";
 import { useTranslation } from "react-i18next";
 import usersMock from "@mocks/users.json";
+import { login } from "../services/LoginService";
 
 export default function RegisterPage() {
   const navigate = useNavigate();
   const { t } = useTranslation("auth");
 
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const [emailTouched, setEmailTouched] = useState(false);
-  const [usernameTouched, setUsernameTouched] = useState(false);
   const [passwordTouched, setPasswordTouched] = useState(false);
   const [repeatPasswordTouched, setRepeatPasswordTouched] = useState(false);
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const normalizedEmail = email.trim().toLowerCase();
-  const normalizedUsername = username.trim().toLowerCase();
 
   const emailHasFormat = emailRegex.test(email);
-  const usernameHasMinLength = username.trim().length >= 3;
+
   const passwordHasMinLength = password.length >= 8;
   const passwordsMatch = password === repeatPassword && repeatPassword.length > 0;
 
@@ -39,23 +37,12 @@ export default function RegisterPage() {
     return usersMock.some((user) => user.email.toLowerCase() === normalizedEmail);
   }, [normalizedEmail]);
 
-  const usernameExists = useMemo(() => {
-    return usersMock.some(
-      (user) => user.username.toLowerCase() === normalizedUsername
-    );
-  }, [normalizedUsername]);
-
   const isEmailValid =
     emailTouched &&
     email.length > 0 &&
     emailHasFormat &&
     !emailExists;
 
-  const isUsernameValid =
-    usernameTouched &&
-    username.trim().length > 0 &&
-    usernameHasMinLength &&
-    !usernameExists;
 
   const isPasswordValid =
     passwordTouched &&
@@ -74,13 +61,6 @@ export default function RegisterPage() {
     return "";
   };
 
-  const getUsernameErrorMessage = () => {
-    if (!usernameTouched || !username) return "";
-    if (!usernameHasMinLength) return t("register.validation.usernameMinLength");
-    if (usernameExists) return t("errors.USERNAME_EXISTS");
-    return "";
-  };
-
   const getPasswordErrorMessage = () => {
     if (!passwordTouched || !password) return "";
     if (!passwordHasMinLength) {
@@ -96,7 +76,7 @@ export default function RegisterPage() {
   };
 
   const validateForm = () => {
-    if (!email || !username || !password || !repeatPassword) {
+    if (!email  || !password || !repeatPassword) {
       return t("register.validation.allFieldsRequired");
     }
 
@@ -106,14 +86,6 @@ export default function RegisterPage() {
 
     if (emailExists) {
       return t("errors.EMAIL_EXISTS");
-    }
-
-    if (!usernameHasMinLength) {
-      return t("register.validation.usernameMinLength");
-    }
-
-    if (usernameExists) {
-      return t("errors.USERNAME_EXISTS");
     }
 
     if (!passwordHasMinLength) {
@@ -131,7 +103,6 @@ export default function RegisterPage() {
     e.preventDefault();
 
     setEmailTouched(true);
-    setUsernameTouched(true);
     setPasswordTouched(true);
     setRepeatPasswordTouched(true);
     setError(null);
@@ -147,10 +118,8 @@ export default function RegisterPage() {
 
       await register({
         email,
-        username,
         password,
       });
-
       navigate(PATHS.HOME);
     } catch (error) {
       console.error("Error registering:", error.message);
