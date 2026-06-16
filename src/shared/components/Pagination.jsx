@@ -1,43 +1,79 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
+export function Pagination({ currentPage, totalPages, onPageChange }) {
+  if (!totalPages || totalPages <= 1) return null;
 
-import React from "react";
+  const getPages = () => {
+    const pages = [];
+    const maxVisible = 5;
 
-export const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+    let start = Math.max(1, currentPage - 2);
+    let end = Math.min(totalPages, start + maxVisible - 1);
+
+    if (end - start < maxVisible - 1) {
+      start = Math.max(1, end - maxVisible + 1);
+    }
+
+    for (let page = start; page <= end; page++) {
+      pages.push(page);
+    }
+
+    return pages;
+  };
+
+  const pages = getPages();
 
   return (
-    <div className="flex justify-center mt-6">
-      <div className="join">        
+    <div className="join">
+      <button
+        className="join-item btn btn-sm"
+        disabled={currentPage === 1}
+        onClick={() => onPageChange(1)}
+      >
+        «
+      </button>
+
+      <button
+        className="join-item btn btn-sm"
+        disabled={currentPage === 1}
+        onClick={() => onPageChange(currentPage - 1)}
+      >
+        ‹
+      </button>
+
+      {pages[0] > 1 && (
+        <button className="join-item btn btn-sm btn-disabled">...</button>
+      )}
+
+      {pages.map((page) => (
         <button
-          onClick={() => onPageChange(Math.max(1, currentPage - 1))}
-          disabled={currentPage === 1}
-          className="join-item btn btn-outline disabled:opacity-50"
-          aria-label="Página anterior"
+          key={page}
+          className={`join-item btn btn-sm ${
+            page === currentPage ? "btn-primary" : ""
+          }`}
+          onClick={() => onPageChange(page)}
         >
-          <ChevronLeft size={16} />
+          {page}
         </button>
-        
-        {pages.map((page) => (
-          <button
-            key={page}
-            onClick={() => onPageChange(page)}
-            className={`join-item btn ${
-              currentPage === page ? "btn-success" : "btn-outline"
-            }`}
-          >
-            {page}
-          </button>
-        ))}
-        
-        <button
-          onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
-          disabled={currentPage === totalPages}
-          className="join-item btn btn-outline disabled:opacity-50"
-          aria-label="Página siguiente"
-        >
-          <ChevronRight size={16} />
-        </button>
-      </div>
+      ))}
+
+      {pages[pages.length - 1] < totalPages && (
+        <button className="join-item btn btn-sm btn-disabled">...</button>
+      )}
+
+      <button
+        className="join-item btn btn-sm"
+        disabled={currentPage === totalPages}
+        onClick={() => onPageChange(currentPage + 1)}
+      >
+        ›
+      </button>
+
+      <button
+        className="join-item btn btn-sm"
+        disabled={currentPage === totalPages}
+        onClick={() => onPageChange(totalPages)}
+      >
+        »
+      </button>
     </div>
   );
-};
+}

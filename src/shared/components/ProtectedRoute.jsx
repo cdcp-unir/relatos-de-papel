@@ -1,12 +1,19 @@
-import { Navigate } from "react-router";
+import { Navigate, useLocation } from "react-router-dom";
 import { PATHS } from "../../app/router/paths";
-import { useLoginState } from "../../state/loginState";
-
+import { isAuthenticated } from "../../state/loginState";
 export default function ProtectedRoute({ children }) {
-  const { isAuthenticated } = useLoginState();
+  const location = useLocation();
 
-  if (!isAuthenticated) {
-    return <Navigate to={PATHS.LOGIN} replace />;
+  const authenticated = isAuthenticated();
+
+  if (!authenticated) {
+    return (
+      <Navigate
+        to={PATHS.LOGIN}
+        replace
+        state={{ from: location }}
+      />
+    );
   }
 
   return children;

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import React, { useContext } from "react";
-import { getLoginState, useLoginState } from "../../state/loginState";
+import { getLoginState, logout, useLoginState } from "../../state/loginState";
 
 import { GlobalContext } from "../context/GlobalContext";
 import { PATHS } from "./../../app/router/paths";
@@ -80,13 +80,13 @@ const Navbar = () => {
                                     </button>
                                     <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow-lg">
                                         <li className="px-2 py-1 text-base opacity-70">
-                                            Hola {`${firstName} ${lastName}`}
+                                            Hola {`${firstName?.split(" ")?.[0]} ${lastName?.split(" ")?.[0]}`}
                                         </li>
                                         <li>
                                             <Link className="text-sm" to={PATHS.PROFILE}>Perfil</Link>
                                         </li>
                                         <li>
-                                            <Link className="text-sm text-error">Salir</Link>
+                                            <Link className="text-sm text-error" onClick={logout}>Salir</Link>
                                         </li>
                                     </ul>
                                 </div>

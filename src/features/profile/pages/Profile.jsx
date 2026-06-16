@@ -1,3 +1,4 @@
+import { formatDate } from '../../../shared/utils/dateFormat';
 import { GlobalContext } from '../../../shared/context/GlobalContext';
 import { avatar } from "../../../shared/hooks/useAvatar";
 import { currencyFormat } from '../../../shared/hooks/useCurrencyFormat';
@@ -65,7 +66,7 @@ const Profile = () => {
         <div>
           <h2 className="text-xl font-bold">{`${firstName} ${lastName}`}</h2>
           <p className="text-sm opacity-70">{email}</p>
-          <p className="text-xs text-primary">Miembro desde {date}</p>
+          <p className="text-xs text-primary">último acceso: {formatDate(date)}</p>
         </div>
       </div>
 

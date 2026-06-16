@@ -10,5 +10,8 @@ export default defineConfig({
     alias: {
       '@mocks': path.resolve(__dirname, './src/mocks'),      
     }
-  }
+  },
+  define: {
+    global: "globalThis",
+  },
 })
