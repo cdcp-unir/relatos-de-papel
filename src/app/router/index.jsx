@@ -25,10 +25,6 @@ const router = createBrowserRouter([
         path: PATHS.LANDING,
         element: <LandingPage />,
       },
-      {
-        path: PATHS.BOOKS,
-        element: <h1>Libros</h1>,
-      },
     ],
   },
   {
