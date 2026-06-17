@@ -11,20 +11,32 @@ export async function getBooks({
   isbn = "",
   title = "",
 } = {}) {
-  return get(
-    BOOKS_ENDPOINT,
-    {
-      page,
-      limit,
-      search,
-      author,
-      category,
-      isbn,
-      title,
-    },
-    {
-      auth: true,
-    },
-  );
-}
+  const params = {
+    page,
+    limit,
+  };
 
+  if (search?.trim()) {
+    params.search = search.trim();
+  }
+
+  if (author?.trim()) {
+    params.author = author.trim();
+  }
+
+  if (category?.trim()) {
+    params.category = category.trim();
+  }
+
+  if (isbn?.trim()) {
+    params.isbn = isbn.trim();
+  }
+
+  if (title?.trim()) {
+    params.title = title.trim();
+  }
+
+  return get(BOOKS_ENDPOINT, params, {
+    auth: false,
+  });
+}
