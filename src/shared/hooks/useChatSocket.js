@@ -5,7 +5,7 @@ import SockJS from "sockjs-client/dist/sockjs";
 const WS_URL =
   import.meta.env.VITE_COMMS_WS_URL || "http://localhost:8085/ws/chat";
 
-export function useChatSocket(userId) {
+export function useChatSocket(userId, token) {
   const clientRef = useRef(null);
 
   const [messages, setMessages] = useState([]);
@@ -13,13 +13,17 @@ export function useChatSocket(userId) {
   const [connecting, setConnecting] = useState(false);
 
   useEffect(() => {
-    if (!userId) return;
+    if (!userId || !token) return;
 
     setConnecting(true);
 
     const client = new Client({
       webSocketFactory: () => new SockJS(WS_URL),
       reconnectDelay: 5000,
+
+      connectHeaders: {
+        Authorization: `Bearer ${token}`,
+      },
 
       onConnect: () => {
         console.log("WebSocket conectado");
@@ -55,8 +59,11 @@ export function useChatSocket(userId) {
 
     return () => {
       client.deactivate();
+      clientRef.current = null;
+      setConnected(false);
+      setConnecting(false);
     };
-  }, [userId]);
+  }, [userId, token]);
 
   const sendMessage = (text) => {
     if (!clientRef.current || !connected) {
@@ -77,6 +84,9 @@ export function useChatSocket(userId) {
     clientRef.current.publish({
       destination: "/app/chat/message",
       body: JSON.stringify(message),
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
 
     return true;
