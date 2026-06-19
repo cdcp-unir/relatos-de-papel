@@ -30,6 +30,7 @@ export const login = async (email, password) => {
     throw new Error("USER_NOT_FOUND");
   }
 
+  localStorage.setItem("token", token);
   const user = await get(`/users-service/api/v1/users/${userId}`);
   const loginData = {
     isAuthenticated: true,
@@ -42,9 +43,7 @@ export const login = async (email, password) => {
     date: new Date().toISOString(),
   };
 
-  localStorage.setItem("token", token);
   localStorage.setItem("loginState", JSON.stringify(loginData));
-
   setLoginState(loginData);
 
   return loginData;

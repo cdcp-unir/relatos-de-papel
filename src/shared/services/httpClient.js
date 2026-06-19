@@ -1,6 +1,6 @@
 // src/shared/services/httpClient.js
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8762";
+const API_URL = import.meta.env.VITE_API_URL || "https://spring-cloud-gateway-production-bae0.up.railway.app";
 
 function normalizeQueryParams(params = {}) {
   const result = {};

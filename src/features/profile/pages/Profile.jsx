@@ -3,56 +3,31 @@ import { GlobalContext } from '../../../shared/context/GlobalContext';
 import { avatar } from "../../../shared/hooks/useAvatar";
 import { currencyFormat } from '../../../shared/hooks/useCurrencyFormat';
 import { getLoginState } from "../../../state/loginState";
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { getOrders } from "../services/OrdersService";
 
 const Profile = () => {
-  const {firstName, lastName, email, date} = getLoginState();
+  const { firstName, lastName, email, date, userId } = getLoginState();
   const { initials } = avatar(firstName, lastName);
   const { formatCurrency } = currencyFormat();
   const { books } = useContext(GlobalContext);
 
-  const pedidos = [
-    {
-      fecha: "16/abril/2026",
-      total: 95.14,
-      estado: "Pendiente",
-      badge: "badge-warning",
-      numero: "N° 87345423-234234",
-      items: books.slice(0, 5),
-    },
-    {
-      fecha: "14/marzo/2026",
-      total: 77.15,
-      estado: "Entregado",
-      badge: "badge-success",
-      numero: "N° 87345423-234234",
-      items: books.slice(10, 15),
-    },
-    {
-      fecha: "6/enero/2026",
-      total: 86.14,
-      estado: "Entregado",
-      badge: "badge-success",
-      numero: "N° 87345423-234234",
-      items: books.slice(20, 21),
-    },
-    {
-      fecha: "17/septiembre/2025",
-      total: 59.47,
-      estado: "Entregado",
-      badge: "badge-success",
-      numero: "N° 87345423-234234",
-      items: books.slice(1, 3),
-    },
-    {
-      fecha: "6/marzo/2025",
-      total: 45.26,
-      estado: "Entregado",
-      badge: "badge-success",
-      numero: "N° 87345277-234234",
-      items: books.slice(26, 30),
-    },
-  ];
+  const [pedidos, setPedidos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function cargarPedidos() {
+      try {
+        const data = await getOrders({ userId: userId });
+        setPedidos(data);
+      } catch (error) {
+        console.error("Error al cargar pedidos:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    cargarPedidos();
+  }, []);
 
   return (
     <div className="flex flex-col gap-8 p-6 max-w-5xl mx-auto">
@@ -73,39 +48,43 @@ const Profile = () => {
       {/* Pedidos */}
       <h2 className="text-lg font-semibold">Tus pedidos más recientes</h2>
 
-      {pedidos.map((pedido, idx) => (
-        <details key={idx} className="collapse bg-base-100 border border-base-300 rounded-md">
-          <summary className="collapse-title font-semibold">
-            <div className="grid grid-cols-12 gap-4 items-center">
-              <div className="col-span-4">
-                Pedido realizado: <span className="font-normal">{pedido.fecha}</span>
+      {loading ? (
+        <p>Cargando pedidos...</p>
+      ) : (
+        pedidos.orders.map((pedido, idx) => (
+          <details key={idx} className="collapse bg-base-100 border border-base-300 rounded-md">
+            <summary className="collapse-title font-semibold">
+              <div className="grid grid-cols-12 gap-4 items-center">
+                <div className="col-span-4">
+                  Pedido realizado: <span className="font-normal">{formatDate(pedido.date)}</span>
+                </div>
+                <div className="col-span-2">
+                  Total: <span className="font-normal">{formatCurrency(pedido.total)}</span>
+                </div>
+                <div className="col-span-2">
+                  <div className={`badge ${pedido.badge}`}>{pedido.status}</div>
+                </div>
+                <div className="col-span-4">
+                  Pedido: <span className="font-normal">{pedido.id}</span>
+                </div>
               </div>
-              <div className="col-span-2">
-                Total: <span className="font-normal">{formatCurrency(pedido.total)}</span>
-              </div>
-              <div className="col-span-2">
-                <div className={`badge ${pedido.badge}`}>{pedido.estado}</div>
-              </div>
-              <div className="col-span-4">
-                Pedido: <span className="font-normal">{pedido.numero}</span>
-              </div>
+            </summary>
+            <div className="collapse-content text-sm">
+              <ul className="divide-y divide-base-200">
+                {pedidos.orders[idx].items.map((book, index) => (
+                  <li key={index} className="py-3">
+                    <div className="grid grid-cols-3 gap-4">
+                      <div className="font-semibold">{book.name}</div>
+                      <div className="text-left">Precio: {formatCurrency(book.price)}</div>
+                      <div className="text-left">Cant: {book.quantity}</div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </summary>
-          <div className="collapse-content text-sm">
-            <ul className="divide-y divide-base-200">
-              {pedido.items.map((book, index) => (
-                <li key={index} className="py-3">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="font-semibold">{book.titulo}</div>
-                    <div className="font-normal">{book.autor}</div>
-                    <div className="text-left">{formatCurrency(book.precio)}</div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </details>
-      ))}
+          </details>
+        ))
+      )}
     </div>
   );
 };

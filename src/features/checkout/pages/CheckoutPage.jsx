@@ -6,6 +6,7 @@ import { GlobalContext } from "../../../shared/context/GlobalContext";
 import { PATHS } from "../../../app/router/paths";
 import { currencyFormat } from "../../../shared/hooks/useCurrencyFormat";
 import { useNavigate } from "react-router-dom";
+import { registerOrder } from "../services/OrderService";
 
 const CheckoutPage = () => {
     const [formData, setFormData] = useState({
@@ -32,9 +33,11 @@ const CheckoutPage = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert("Pago procesado correctamente. ¡Gracias por tu compra!");
+
+        const response = await registerOrder({items:cart});
+        alert("Pago procesado correctamente. ¡Gracias por tu compra!" + "Orden: "+response.name);
         clear();
         navigate("/home");
     };
