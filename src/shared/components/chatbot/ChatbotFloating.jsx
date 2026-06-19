@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useChatSocket } from "../../hooks/useChatSocket";
 import { useLoginState } from "../../../state/loginState";
 
@@ -83,7 +83,7 @@ function ChatLauncher({ open, onClick, connected }) {
 }
 
 export default function ChatbotFloating() {
-  const { isAuthenticated, userId, email, token, jwt } = useLoginState();
+  const { isAuthenticated, userId, email, token } = useLoginState();
 
   const accessToken = localStorage.getItem("token") || token;
   const chatUserId = userId || email;

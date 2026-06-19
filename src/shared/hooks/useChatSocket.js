@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Client } from "@stomp/stompjs";
-import SockJS from "sockjs-client/dist/sockjs";
 
 const WS_URL =
   import.meta.env.VITE_COMMS_WS_URL || "http://localhost:8085/ws/chat";
@@ -13,17 +12,16 @@ export function useChatSocket(userId, token) {
   const [connecting, setConnecting] = useState(false);
 
   useEffect(() => {
-    if (!userId || !token) return;
+    if (!userId || !token) {
+      setConnected(false);
+      setConnecting(false);
+      return;
+    }
 
     setConnecting(true);
 
     const client = new Client({
-      webSocketFactory: () => new SockJS(WS_URL),
-      reconnectDelay: 5000,
-
-      connectHeaders: {
-        Authorization: `Bearer ${token}`,
-      },
+      brokerURL: WS_URL,
 
       onConnect: () => {
         console.log("WebSocket conectado");
