@@ -36,13 +36,9 @@ const CheckoutPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const payload = {
-            email: formData.email,
-            item: cart
-        };
-
-        const response = await registerOrder({items:payload});
-        alert("Pago procesado correctamente. ¡Gracias por tu compra!" + "Orden: "+response.name);
+        const response = await registerOrder({email: formData.email,
+            items: cart});
+        alert("Pago procesado correctamente. ¡Gracias por tu compra! " + "Orden: "+response.name);
         clear();
         navigate("/home");
     };
