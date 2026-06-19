@@ -56,7 +56,11 @@ function ChatLauncher({ open, onClick, connected }) {
           stroke="currentColor"
           strokeWidth="2"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
         </svg>
       ) : (
         <svg
@@ -79,7 +83,13 @@ function ChatLauncher({ open, onClick, connected }) {
 }
 
 export default function ChatbotFloating() {
-  const { isAuthenticated, userId, email } = useLoginState();
+  const { isAuthenticated, userId, email, token, jwt } = useLoginState();
+
+  const accessToken = localStorage.getItem("token") || token;
+  const chatUserId = userId || email;
+
+  const { messages, connected, connecting, sendMessage, clearMessages } =
+    useChatSocket(isAuthenticated ? chatUserId : null, accessToken);
 
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("");
@@ -87,11 +97,6 @@ export default function ChatbotFloating() {
 
   const scrollRef = useRef(null);
   const textareaRef = useRef(null);
-
-  const chatUserId = useMemo(() => userId || email || "guest", [userId, email]);
-
-  const { messages, connected, connecting, sendMessage, clearMessages } =
-    useChatSocket(isAuthenticated ? chatUserId : null);
 
   useEffect(() => {
     if (!scrollRef.current) return;
@@ -150,7 +155,11 @@ export default function ChatbotFloating() {
                 <div className="mt-1 flex items-center gap-2 text-xs opacity-95">
                   <span
                     className={`h-2 w-2 rounded-full ${
-                      connected ? "bg-success" : connecting ? "bg-warning" : "bg-error"
+                      connected
+                        ? "bg-success"
+                        : connecting
+                          ? "bg-warning"
+                          : "bg-error"
                     }`}
                   />
                   <span>{connectionLabel}</span>
@@ -188,8 +197,8 @@ export default function ChatbotFloating() {
                   ¡Hola! Soy Relatos Bot 👋
                 </p>
                 <p className="mt-2 text-sm text-base-content/70">
-                  Puedo ayudarte con recomendaciones de libros, autores, categorías
-                  o dudas generales sobre la tienda.
+                  Puedo ayudarte con recomendaciones de libros, autores,
+                  categorías o dudas generales sobre la tienda.
                 </p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -224,7 +233,9 @@ export default function ChatbotFloating() {
                     key={`${msg.timestamp || index}-${index}`}
                     className={`flex ${isUser ? "justify-end" : "justify-start"}`}
                   >
-                    <div className={`max-w-[85%] ${isUser ? "items-end" : "items-start"} flex flex-col`}>
+                    <div
+                      className={`max-w-[85%] ${isUser ? "items-end" : "items-start"} flex flex-col`}
+                    >
                       <span className="mb-1 px-1 text-[11px] text-base-content/50">
                         {isUser ? "Tú" : "Relatos Bot"}
                         {msg.timestamp ? ` • ${formatHour(msg.timestamp)}` : ""}
